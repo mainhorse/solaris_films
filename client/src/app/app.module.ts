@@ -9,6 +9,9 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
+import { PeliculaAdmComponent } from './components/pelicula-adm/pelicula-adm.component';
+import { ComidaAdmComponent } from './components/comida-adm/comida-adm.component';
+import { UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { TrailerComponent } from './components/trailer/trailer.component';
     TarjetaComponent,
     FooterComponent,
     ChatComponent,
-    TrailerComponent
+    TrailerComponent,
+    PeliculaAdmComponent,
+    ComidaAdmComponent,
+    UsuarioAdmComponent
   ],
   imports: [
     BrowserModule

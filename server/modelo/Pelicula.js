@@ -11,7 +11,6 @@ var PeliculaSchema = new Schema({
     fechaEstreno : String,
     hora : String,
     salas : Array,
-    estado : Boolean
+    estado : Boolean    
 });
-
 module.exports = mongoose.model('Pelicula', PeliculaSchema);
