@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
 var UsuarioSchema = new Schema({
     imagen : String,
     nombre : String,
@@ -8,12 +7,11 @@ var UsuarioSchema = new Schema({
     correo : String,
     contrasena : String,
     rol : String,
-    compras : String,
+    compras : Array,
     direccion : String,
     celular : Number,
     subscripcion : Date,    
     estado : Boolean
 });
 
-module.exports = moongose.model('Usuario', UsuarioSchema);
-
+module.exports = mongoose.model('Usuario', UsuarioSchema);
