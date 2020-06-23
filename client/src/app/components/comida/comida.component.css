@@ -89,6 +89,7 @@
     font-size: 28px;
     color: #344055;
     margin: 25px;
+    margin-bottom: 0px;
     
 }
 
@@ -123,6 +124,11 @@
     margin-left: 0.5em;
     color: gold;
     width: 50%;
+}
+.product-image-size{
+    width: 240px;
+    height: 203px;
+    border-radius: 9px;
 }
 
 

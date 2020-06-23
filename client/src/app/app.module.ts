@@ -14,6 +14,7 @@ import { ComidaAdmComponent } from './components/comida-adm/comida-adm.component
 import { UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.component';
 import { SliderFoodComponent } from './components/slider-food/slider-food.component';
 import { CarteleraComponent } from './components/cartelera/cartelera.component';
+import { SalaComponent } from './components/sala/sala.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CarteleraComponent } from './components/cartelera/cartelera.component';
     ComidaAdmComponent,
     UsuarioAdmComponent,
     SliderFoodComponent,
-    CarteleraComponent
+    CarteleraComponent,
+    SalaComponent
   ],
   imports: [
     BrowserModule
