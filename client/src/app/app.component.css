@@ -1,6 +1,12 @@
+@font-face {
+    font-family: "Space ace";
+    src: url("/assets/space_age.ttf");
+  }
+
 #container{
     width: 80%;
     height: 60%;
     border: 2px solid black;
     float: left;
+    font-family: sans-serif;
 }
