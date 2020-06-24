@@ -6,11 +6,14 @@ var PeliculaSchema = new Schema({
     director : String,
     linkTrailer : String,
     linkPelicula : String,
+    cartelera : String,
     sinopsis : String,
     clasificacion : String,
     fechaEstreno : String,
-    hora : String,
-    salas : Array,
+    puntuacion : Number,
+    tiempo : String,
+    calidad : String,
+    tipo : String,
     estado : Boolean    
 });
 module.exports = mongoose.model('Pelicula', PeliculaSchema);
