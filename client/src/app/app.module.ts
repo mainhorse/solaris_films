@@ -21,6 +21,7 @@ import { UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.compon
 import { SliderFoodComponent } from './components/slider-food/slider-food.component';
 import { CarteleraComponent } from './components/cartelera/cartelera.component';
 import { SalaComponent } from './components/sala/sala.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SalaComponent } from './components/sala/sala.component';
     UsuarioAdmComponent,
     SliderFoodComponent,
     CarteleraComponent,
-    SalaComponent
+    SalaComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
