@@ -1,26 +1,95 @@
 <div id="container">
     <aside id="izq">
-        <form>
-            <input class="datos" type="text" placeholder="Nombre Pelicula">
-            <input class="datos" type="text" placeholder="Director">
-            <input class="datos" type="text" placeholder="Link Trailer">
-            <input class="datos" type="text" placeholder="Link Pelicula">
-            <input class="datos" type="text" placeholder="Sinopsis">
-            <input class="datos" type="text" placeholder="clasificacion">
-            <input class="datos" type="text" placeholder="Fecha de estreno">
-            <input class="datos" type="text"placeholder="Horarios">
-            <input class="datos" type="text" placeholder="Salas">
-            <input class="datos" type="text" placeholder="estado">
-            <button id="botonAgregar" type="submit">Agregar   </button>
+        <form #formularioPeliculas="ngForm" >
+            <input class="datos" type="text" placeholder="Nombre Pelicula" name="titulo"
+            #titulo="ngModel" [(ngModel)]= "pelicula.titulo">
+            <input class="datos" type="text" placeholder="Director" name="Director"
+            #director="ngModel" [(ngModel)]= "pelicula.director">
+            <input class="datos" type="text" placeholder="Sinopsis" name="sinopsis"
+            #sinopsis="ngModel" [(ngModel)] = "pelicula.sinopsis">
+            <input class="datos" type="text" placeholder="clasificacion" name="clasificacion"
+            #clasificacion="ngModel" [(ngModel)] ="pelicula.clasificacion">
+            <input class="datos" type="text" placeholder="Fecha de estreno" name="estreno"
+            #fechaEstreno="ngModel" [(ngModel)] = "pelicula.fechaEstreno">
+            <input class="datos" type="text" placeholder="Puntuacion" name="puntuacion"
+            #puntuacion="ngModel" [(ngModel)] ="pelicula.puntuacion">
+            <input class="datos" type="text"placeholder="Duracion" name="tiempo"
+            #tiempo="ngModel" [(ngModel)]="pelicula.tiempo">
+            <input class="datos" type="text" placeholder="calidad" name="calidad"
+            #calidad="ngModel" [(ngModel)]= "pelicula.calidad">
+            <input class="datos" type="text" placeholder="estado" name="estado"
+            #estado="ngModel" [(ngModel)]="pelicula.estado">
+            <input type="file" class="datos">
+            <input class="datos" type="text" placeholder="tipo de documento" name="tipo"
+            #tipo="ngModel" [(ngModel)] = "pelicula.tipo">
+            <button id="botonAgregar" type="submit" (click)="nuevaPelicula()">Pelicula N</button>
+            <button id="botonDocumento" type="submit" (click)="subirDocumento()">pelicula D</button>
+            <button id="botonActualizar" type="submit" (click)="actualizarPelicula()">Actualizar</button>
         </form> 
     </aside>
     <aside id="der">
         <div id="pelicula">
             <div id="trailer">
-                <iframe width="230" height="190" src="https://www.youtube.com/embed/Xh1TwRilcLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TcMBFSGVi1c?&rel=1&controls=0&showinfo=1&iv_load_policy=3" frameborder="0"></iframe>
             </div>
         </div>
-
-
+        <div id="sinopsis">
+            <div class="card">
+                <input type="checkbox" id="card1" class="more" aria-hidden="true">
+                <div class="content">
+                    <div class="front" style="background-image: url('assets/img/peli1.jpg')">
+                        <div class="inner">
+                            <label for="card1" class="button" aria-hidden="true">
+                                Detalles
+                            </label>                   
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <div class="info">
+                                <span>{{ pelicula.puntuacion}}</span>
+                                <div class="icon">
+                                    <img src="./assets/img/clas.png"/> 
+                                    <span>Puntuación</span>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span>{{pelicula.calidad}}</span>
+                                <div class="icon">
+                                    <img src="./assets/img/2d.png"/> 
+                                    <span>Calidad</span>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span>128</span>
+                                <div class="icon">
+                                    <img src="./assets/img/ver.jpg"/> 
+                                    <span>Espectadores</span>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span>*</span>
+                                <div class="icon">
+                                    <img src="./assets/img/trailer.png"/> 
+                                    <span>Trailer</span>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <p>{{ pelicula.titulo }}</p>
+                                <div class="location">{{ pelicula.director }}</div>
+                                <div class="price">{{ pelicula.tiempo}} </div>
+                                <p>{{pelicula.sinopsis }}</p>
+                            </div> 
+                            <label for="card1" class="button return" aria-hidden="true">
+                                Volver
+                            </label>
+                            <label class="imglabel" for="card1" class="button2 return" aria-hidden="true">
+                              Comprar
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </aside>
 </div>
