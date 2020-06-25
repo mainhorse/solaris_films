@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CargarScriptService } from "../../services/cargarScript.service";
+
 @Component({
   selector: 'app-sala',
   templateUrl: './sala.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalaComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _CargaScripts: CargarScriptService) {
+ _CargaScripts.Carga(["controles"]);
+  }
 
   ngOnInit(): void {
   }
-
 }
+

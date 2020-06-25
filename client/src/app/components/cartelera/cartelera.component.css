@@ -1,4 +1,22 @@
 
+@font-face {
+    font-family: "Space";
+    src: url("/assets/space_age.ttf");
+  }
+
+.t-space-h1{
+	font-family:'Space','Montserrat', sans-serif ;
+	color: #330867;
+	font-size: 50px;
+
+}
+.t-space-p{
+	font-family:'Space','Montserrat', sans-serif ;
+	color: #330867;
+	font-size: 17px;
+
+}
+
 .cartelera {
     box-sizing: border-box;
 	display: flex;
