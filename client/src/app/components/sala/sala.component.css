@@ -64,7 +64,9 @@
 
   h1{
     text-align: center;
-    color: #fff;}
+    color: #fff;
+    font-family: 'Space' ;
+  }
 
 video{
     margin: 0 auto;

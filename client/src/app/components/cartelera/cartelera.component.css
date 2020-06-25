@@ -1,17 +1,17 @@
 
 @font-face {
-    font-family: "Space ace";
+    font-family: "Space";
     src: url("/assets/space_age.ttf");
   }
 
 .t-space-h1{
-	font-family:'Space ace','Montserrat', sans-serif ;
+	font-family:'Space','Montserrat', sans-serif ;
 	color: #330867;
 	font-size: 50px;
 
 }
 .t-space-p{
-	font-family:'Space ace','Montserrat', sans-serif ;
+	font-family:'Space','Montserrat', sans-serif ;
 	color: #330867;
 	font-size: 17px;
 
