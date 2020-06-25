@@ -11,6 +11,4 @@ api.post('/registro', UsuarioControl.NuevoUsuario);
 api.post('/ingreso', UsuarioControl.Ingresar);
 api.put('/actualizar/:id',UsuarioControl.ModificarDatos);
 
-
-
 module.exports = api;

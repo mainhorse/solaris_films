@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { stringify } from 'querystring';
+
 
 @Injectable()
 export class PeliculasService {
@@ -24,6 +24,17 @@ url = 'http://localhost:3000/api/';
     ).pipe(map(res => res))
   }
 
+  ArchivoNuevo(file: File, id, tipoArchivo){
+    // instanciamos el objeto FormData que nos permitira enviar la img
+    let formData = new FormData();
+    formData.append('archivos', file);
+    formData.append('tipo', tipoArchivo);
+    return this._http.put(
+      this.url + 'archivoNuevo/' + id ,
+      formData,
+      ).pipe(map(res => res));
+    }
+
   ActualizarPelicula(id,DatosNuevos){
     console.log(id);
     console.log(DatosNuevos);
@@ -35,6 +46,16 @@ url = 'http://localhost:3000/api/';
       this.url + 'actualizarPelicula/' + id,
       params,
       options
+    ).pipe(map(res => res));
+  }
+
+  cargarCaratula(file: File, id){
+    // instanciamos el objeto FormData que nos permitira enviar la img
+    let formData = new FormData();
+    formData.append('caratula', file);
+    return this._http.put(
+      this.url + 'caratula/' + id,
+      formData
     ).pipe(map(res => res));
   }
 }
