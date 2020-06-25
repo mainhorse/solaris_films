@@ -1,0 +1,95 @@
+.curtain {
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+    
+  .curtain__wrapper {
+    width: 100%; 
+    height: 100%;
+  }
+        
+  .curtain__panel {
+    background: #8b0000;
+    background-image: url("https://images.vexels.com/media/users/17482/101168/preview2/01bdac45c37aff22f75230abf3f019d4-red-curtain-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    position: relative;
+    z-index: 2;
+    transition: all 1s ease-out;
+  }
+  
+  .curtain__panel--left {
+    transform: translateX(-100%);
+  }
+  
+  .curtain__panel--right {
+    transform: translateX(100%);
+  }
+    
+  .curtain__prize {
+    background-color: #606060;
+    background-image: url("../../../assets/fondo_cine.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    position: absolute;
+    z-index: 1; 
+    width: 100%; 
+    height: 100%;
+   
+  }
+  input[type=checkbox] {
+    position: absolute; 
+    cursor: pointer; 
+    width: 100%; 
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+  }
+
+  input[type=checkbox]:checked ~ div.curtain__panel--left {
+    transform: translateX(0);
+  }
+          
+
+  input[type=checkbox]:checked ~ div.curtain__panel--right {
+    transform: translateX(0);
+  }
+
+  h1{
+    text-align: center;
+    color: #fff;}
+
+video{
+    margin: 0 auto;
+    display: block;
+    width: 90%;
+    height: 90%;
+}
+
+.controles{
+    text-align: center;
+    padding: 2%;
+    flex-wrap: wrap;
+    background-color: #606060;
+}
+
+button{
+    width: 20vh;
+    height: 10vh;
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: #0000AB 3px 3px 3px;
+}
+
+i{
+   font-size: 40px;
+}

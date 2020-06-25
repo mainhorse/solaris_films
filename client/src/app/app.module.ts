@@ -1,6 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+import { PeliculasService } from './services/peliculas.service';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms';
+
+//Inicio Service
+import { CargarScriptService } from './services/cargarScript.service';
+
 import { AppComponent } from './app.component';
 import { NavInicioComponent } from './components/nav-inicio/nav-inicio.component';
 import { SliderComponent } from './components/slider/slider.component';
@@ -24,7 +34,9 @@ import { TrailerComponent } from './components/trailer/trailer.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [PeliculasService,
+    CargarScriptService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
