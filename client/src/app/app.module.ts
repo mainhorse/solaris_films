@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { PeliculasService } from './services/peliculas.service';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule } from '@angular/forms';
+
+//Inicio Service
+import { CargarScriptService } from './services/cargarScript.service';
 
 import { AppComponent } from './app.component';
 import { NavInicioComponent } from './components/nav-inicio/nav-inicio.component';
@@ -47,7 +47,8 @@ import { HeaderComponent } from './components/header/header.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [PeliculasService],
+  providers: [PeliculasService,
+    CargarScriptService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
