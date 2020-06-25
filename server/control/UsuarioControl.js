@@ -16,34 +16,39 @@ function NuevoUsuario(req,res){
     usuario.telefono = parametros.celular;
     usuario.subscripcion = parametros.subscripcion;
     usuario.estado = parametros.estado;
-    if(usuario.correo != '' || usuario.contrasena != ''){
-        Usuario.findOne({correo : usuario.correo}, (err, usuarioNuevo)=>{
-            if(err){
-                res.status(500).send({message : "Error en el servidor"});
-            } else {
-                if(usuarioNuevo){
-                    res.status(200).send({message : "Datos invalidos"});
-                } else if(!usuarioNuevo){
-                    usuario.save((err, registro)=>{
-                        if(err){
-                            res.status(500).send({message : "Error en el servidor"});
-                        } else{
-                            if(!registro){
-                                res.status(200).send({message : "Datos invalidos"});
+    var tipoUsuario = usuario.rol.toLowerCase();
+    usuario.rol = tipoUsuario;
+    if(tipoUsuario == 'depredador' || tipoUsuario == 'alien'){
+        if(usuario.correo != '' || usuario.contrasena != ''){
+            Usuario.findOne({correo : usuario.correo}, (err, usuarioNuevo)=>{
+                if(err){
+                    res.status(500).send({message : "Error en el servidor"});
+                } else {
+                    if(usuarioNuevo){
+                        res.status(200).send({message : "Datos invalidos"});
+                    } else if(!usuarioNuevo){
+                        usuario.save((err, registro)=>{
+                            if(err){
+                                res.status(500).send({message : "Error en el servidor"});
                             } else{
-                                res.status(200).send({
-                                    message : "registro exitoso",
-                                    usuario : registro
-                                });
+                                if(!registro){
+                                    res.status(200).send({message : "Datos invalidos"});
+                                } else{
+                                    res.status(200).send({
+                                        message : "registro exitoso",
+                                        usuario : registro
+                                    });
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
                 }
-            }
-        },)
-    } else {
-        res.status(200).send({message : "Los datos son obligatorios"});
+            },)
+          } 
     }
+      else {
+        res.status(200).send({message : "hubo un error en tu ingreso, vuelve a intentar"});
+      }
 }
 
 function Ingresar(req,res){

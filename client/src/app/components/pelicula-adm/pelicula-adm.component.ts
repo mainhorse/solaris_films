@@ -10,17 +10,20 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class PeliculaAdmComponent implements OnInit {
   public pelicula : Pelicula;
-  
-
+  public archivoSubir : File;
+  public url : String;
+  caratula = 'caratula/'; 
   constructor(
-    private peliculaService : PeliculasService
+    private peliculaService : PeliculasService,
   ) { 
     this.pelicula = new Pelicula("","","","","","","","","",0,"","","",true);
+    this.url =  peliculaService.url; 
     
   }
 
   ngOnInit(): void {
     this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
+
   }
 
   nuevaPelicula(){
@@ -28,13 +31,12 @@ export class PeliculaAdmComponent implements OnInit {
       (response : any)=> {
         let resultado = response.pelicula;
         let mensaje = response.message;
-
        if(!resultado){
          alert(mensaje);
        } else{
          localStorage.setItem('pelicula',JSON.stringify(resultado));
-         this.pelicula = new Pelicula("","","","","","","","","",0,"","","",true);
          alert('pelicula guardada');
+         window.location.reload();
        }
       },error =>{
         var errorMensaje = <any>error;
@@ -44,11 +46,41 @@ export class PeliculaAdmComponent implements OnInit {
       }
       )
   }
-  subirArchivo(dato){
 
-  }
+subirArchivo(fileInput : any){
+  this.archivoSubir = <File>fileInput.target.files[0];
+}    
 
-  actualizarPelicula(){
+subirPelicula(){
+  this.peliculaService.ArchivoNuevo(this.archivoSubir, this.pelicula._id, this.pelicula.tipo).subscribe(
+    (response : any)=>{
+      let respuesta = response.pelicula;
+      let mensaje = response.message;
+      if(!respuesta){
+        alert(mensaje);
+      } else {
+        console.log(response.cartelera); 
+        this.pelicula = respuesta; 
+        localStorage.setItem('pelicula',JSON.stringify(respuesta));
+        alert(mensaje);
+      
+        //window.location.reload();
+        let rutaImg = this.url + 'caratula/' + this.pelicula.cartelera;
+        //document.getElementById('cartelera').setAttribute('src',rutaImg);
+        document.getElementById('fondoCartelera').setAttribute("style", "background-image: url('" + this.url + 'caratula/' + this.pelicula.cartelera + "'); width: 100%; height: 100%");
+    
+      }
+
+    }, error =>{
+      let errormensaje = <any>error;
+      if(errormensaje != null){
+        console.log(errormensaje);
+      }
+    }
+    )
+
+}
+actualizarPelicula(){
     this.peliculaService.ActualizarPelicula(this.pelicula._id,this.pelicula).subscribe((response : any)=>{
       let respuesta = response.pelicula;
       let mensaje = response.message;
@@ -64,9 +96,9 @@ export class PeliculaAdmComponent implements OnInit {
         console.log(errorMensaje);
       }
     })
-  }
+}
 
-  subirDocumento(){
+reproducirVideo(){
 
-  }
+}
 }

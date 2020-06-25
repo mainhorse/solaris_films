@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { PeliculasService } from './services/peliculas.service';
+import { UsuarioService } from './services/usuario.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +22,11 @@ import { UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.compon
 import { SliderFoodComponent } from './components/slider-food/slider-food.component';
 import { CarteleraComponent } from './components/cartelera/cartelera.component';
 import { SalaComponent } from './components/sala/sala.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { IngresoComponent } from './components/ingreso/ingreso.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
+
 
 
 @NgModule({
@@ -40,15 +45,18 @@ import { HeaderComponent } from './components/header/header.component';
     SliderFoodComponent,
     CarteleraComponent,
     SalaComponent,
+    RegistroComponent,
+    IngresoComponent
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule
   ],
-  providers: [PeliculasService,
-    CargarScriptService],
+  providers: [UsuarioService,PeliculasService,CargarScriptService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

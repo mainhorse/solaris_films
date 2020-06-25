@@ -1,10 +1,22 @@
-<app-header></app-header>
-<app-slider></app-slider>
-<app-cartelera></app-cartelera> 
-<app-header></app-header>
+
+
+<div *ngIf='pagina == undefined'>
+    <app-nav-inicio></app-nav-inicio>  
+    <router-outlet></router-outlet>
+    <app-slider></app-slider>
+</div>
+
+<div *ngIf='pagina == "usuario"' id="usuario">
+    <app-nav-inicio></app-nav-inicio> 
+    <app-pelicula-adm></app-pelicula-adm>
+</div>
+
+<!--
 <app-slider-food></app-slider-food>
-<app-comida></app-comida>
-<app-sala></app-sala>
-<app-footer></app-footer>
+<app-comida></app-comida> 
+-->
+  
+
+
 
 
