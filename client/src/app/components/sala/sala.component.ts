@@ -16,3 +16,4 @@ export class SalaComponent implements OnInit {
   ngOnInit(): void {
   }
 }
+

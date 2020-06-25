@@ -1,11 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { PeliculasService } from './services/peliculas.service';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule } from '@angular/forms';
 
 //Inicio Service
@@ -19,6 +15,14 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
+import { PeliculaAdmComponent } from './components/pelicula-adm/pelicula-adm.component';
+import { ComidaAdmComponent } from './components/comida-adm/comida-adm.component';
+import { UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.component';
+import { SliderFoodComponent } from './components/slider-food/slider-food.component';
+import { CarteleraComponent } from './components/cartelera/cartelera.component';
+import { SalaComponent } from './components/sala/sala.component';
+import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -29,14 +33,22 @@ import { TrailerComponent } from './components/trailer/trailer.component';
     TarjetaComponent,
     FooterComponent,
     ChatComponent,
-    TrailerComponent
+    TrailerComponent,
+    PeliculaAdmComponent,
+    ComidaAdmComponent,
+    UsuarioAdmComponent,
+    SliderFoodComponent,
+    CarteleraComponent,
+    SalaComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [PeliculasService,
     CargarScriptService],
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }
