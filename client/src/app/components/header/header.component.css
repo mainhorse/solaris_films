@@ -5,9 +5,9 @@ h1{
   display:table;
 }
 .leftMenu{
-	height: 100%;
+	height: 130%;
 	background-color:  #161d27 ;
-	position: fixed;
+	position: absolute;
 	left	: 0;
   top:0;
 	width	: 50px;
@@ -336,3 +336,4 @@ iv.topBotomBordersOut a:before, div.topBotomBordersOut a:after
   h2{
       margin-left: 39%;
   }
+
