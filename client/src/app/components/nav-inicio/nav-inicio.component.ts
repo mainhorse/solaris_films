@@ -13,4 +13,16 @@ export class NavInicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+home(){
+  localStorage.setItem("pagina","home");
+  window.location.reload();
+}
+
+comida(){
+  localStorage.setItem("pagina","comida");
+  window.location.reload();
+}
+
+
+
 }

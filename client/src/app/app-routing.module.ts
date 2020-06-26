@@ -9,7 +9,7 @@ import { CarteleraComponent } from './components/cartelera/cartelera.component';
 
 const routes : Routes = [
     //{path:'', component : },
-    {path: '', component: CarteleraComponent},
+    
     {path: 'comida', component : ComidaComponent},
     {path : 'registro', component : RegistroComponent},
     {path : 'ingreso' , component : IngresoComponent}

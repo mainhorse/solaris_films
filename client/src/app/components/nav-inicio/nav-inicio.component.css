@@ -1,32 +1,28 @@
-*
+html, body
 {
     margin: 0px;
-    background-color: black;
+    background-color: white;
 }
 
 .he1
 {
     font-family: Raleway;
-
 	padding: 5em 3em;
     text-align: center;
     margin-top: 4.4% ;
     margin-left: 0.9;
+    
+    
 }
 
 header span
 {
-    color: #222;
-}
-
-footer span
-{
-  color: #AAA;
+    color: #161d27;
 }
 
 div.container
 {
-    font-family: Raleway;
+    font-family: "Space";
     
 	padding: 40px 1px;
     text-align: center;
@@ -35,63 +31,75 @@ div.container
     margin-right: 12px;
 }
 
-div.container a
-{
-    color: #FFF;
-    text-decoration: none;
-    font: 20px Raleway;
-    margin: 0px 10px;
-    padding: 10px 10px;
+
+.red a {
+    --fill-color: snow;
     position: relative;
-    z-index: 0;
-    cursor: pointer;
-}
+    display: inline-block;
+    padding: 4px 0;
+    font: 700 1rem Raleway, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px var(--fill-color);
+    background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+    color: transparent;
+    background-clip: text;
+    transition: 0.5s linear;
+    font-size: 20px;
+    margin-left: 30px;
+    
+  }
+  .red a:hover {
+      background-size: 100%;
+    }
+
+
+
 .red
 {
-    background: #039dc7;
+    background:  #161d27;
 }
 
-iv.topBotomBordersOut a:before, div.topBotomBordersOut a:after
-{
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #FFF;
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
-}
 
-div.topBotomBordersOut a:before
-{
-    top: 0px;
-    transform: translateY(10px);
-}
-
-div.topBotomBordersOut a:after
-{
-    bottom: 0px;
-    transform: translateY(-10px);
-}
-
-div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
-{
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-.btn1{
-    background-color: black;
-    box-shadow: black;
+.btn1{    
     border-radius: 5px;
-    border: black;   
+    border: black;
+    margin-left: 2%;      
 }
+
 
 .btn2{
-    background-color: black;
-    box-shadow: black;
     border-radius: 5px;
-    border: black;  
+    border: black;
+    margin-left: 2%;      
+    
+    
 }
 
+.red p {
+    --fill-color: black;
+    position: relative;
+    display: inline-block;
+    font: 700 1rem Raleway, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px var(--fill-color);
+    background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+    color: transparent;
+    background-clip: text;
+    transition: 0.5s linear;
+    
+    
+  }
+.red p:hover {
+    background-size: 100%;
+}
+
+
+.logo3{
+    width: 110px;
+    height: 110px;
+    margin-top: -15%;
+    position: absolute;
+    margin-left: 180px;
+}

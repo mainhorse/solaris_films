@@ -46,7 +46,7 @@ import { HeaderComponent } from './components/header/header.component';
     CarteleraComponent,
     SalaComponent,
     RegistroComponent,
-    IngresoComponent
+    IngresoComponent,
     HeaderComponent
   ],
   imports: [
