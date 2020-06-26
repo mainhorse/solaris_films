@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-inicio.component.css']
 })
 export class NavInicioComponent implements OnInit {
+ 
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+home(){
+  localStorage.setItem("pagina","home");
+  window.location.reload();
+}
+
+comida(){
+  localStorage.setItem("pagina","comida");
+  window.location.reload();
+}
+
+
 
 }

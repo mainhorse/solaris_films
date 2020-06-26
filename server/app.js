@@ -14,6 +14,7 @@ const usuarioRutas = require('./rutas/UsuarioRutas');
 const peliculasRutas = require('./rutas/PeliculasRutas');
 const { Server } = require('http');
 
+
 app.use(express.json());
 app.use(cors());
 
