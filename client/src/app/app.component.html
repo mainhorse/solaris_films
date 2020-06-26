@@ -1,0 +1,22 @@
+
+
+<div *ngIf='pagina == undefined'>
+    <app-nav-inicio></app-nav-inicio>  
+    <router-outlet></router-outlet>
+    <app-slider></app-slider>
+</div>
+
+<div *ngIf='pagina == "usuario"' id="usuario">
+    <app-nav-inicio></app-nav-inicio> 
+    <app-pelicula-adm></app-pelicula-adm>
+</div>
+
+<!--
+<app-slider-food></app-slider-food>
+<app-comida></app-comida> 
+-->
+  
+
+
+
+
