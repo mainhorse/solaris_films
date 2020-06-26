@@ -22,6 +22,7 @@ import { SliderFoodComponent } from './components/slider-food/slider-food.compon
 import { CarteleraComponent } from './components/cartelera/cartelera.component';
 import { SalaComponent } from './components/sala/sala.component';
 import { HeaderComponent } from './components/header/header.component';
+import { EmpresaComponent } from './components/empresa/empresa.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HeaderComponent } from './components/header/header.component';
     SliderFoodComponent,
     CarteleraComponent,
     SalaComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmpresaComponent
   ],
   imports: [
     BrowserModule,
