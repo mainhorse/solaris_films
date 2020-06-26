@@ -1,149 +1,338 @@
 
-/* COLOR */
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-
-ul { 
-  list-style-type: none;
-  display: inline-flex;
-  align-items: start;
-  list-style: none;
+h1{
+  color: black;
+  margin:30px auto;
+  display:table;
 }
-.li {
-    padding: 6px 0;
+.leftMenu{
+	height: 100%;
+	background-color:  #161d27 ;
+	position: fixed;
+	left	: 0;
+  top:0;
+	width	: 50px;
+	overflow: hidden;
+  transition: .5s cubic-bezier(.8, .5, .2, 1.4);
+  filter: drop-shadow(5px 5px 10px #444); 
 }
-a {
-      --fill-color: snow;
-      position: relative;
-      display: block;
-      padding: 4px 0;
-      font: 700 3rem Raleway, sans-serif;
-      text-decoration: none;
-      text-transform: uppercase;
-      -webkit-text-stroke: 2px var(--fill-color);
-      background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
-      color: transparent;
-      background-clip: text;
-      transition: 0.5s linear;
-      font-size: 30px;
-      margin-left: 30px;
+.hamburger{
+	width	: 40px;
+	height	: 40px;
+	border-radius: 50%;
+	background-color: snow;
+	float	: right;
+	margin-right: 4px;
+	margin-top: 5px; 
+	text-align: center;
+	cursor	: pointer; 
+	box-shadow: 0px 3px 4px rgba(0,0,0,.5); 
+	position: relative; 
+	transform: rotate(0deg);
 }
- a:hover {
-        background-size: 100%;
-      }
+.hamburger.open{
+	background-color: tomato;
+	transition: all ease .5s;
+}
+.hamburger:hover {
+	box-shadow: none; 
+	transition: all ease .5s;
+	transform: rotate(360deg);
+	
+}
+/* BOTON HAMBURGER */
+.hamburger span{
+	width	: 60%;
+	height	: 3px;
+	background-color: black;
+	display: block;
+	border-radius: 1px;
+	float	: left;
+	margin-left: 20%; 
+	transition: all ease .3s;
+}
+.hamburger span:nth-child(1){
+	margin-top: 13px; 
+}
+.hamburger span:nth-child(2){
+	margin-top: 3px; 
+}
+.hamburger span:nth-child(3){
+	margin-top: 3px; 
+}
+.open span:nth-child(1){
+	background-color: black;
+	transform: rotate(45deg);
+	transition-timing-function 	: ease-in-out;
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	width: 25px;
+	transition: all ease .5s;
+	border-radius: 10px; 
+}
+.open span:nth-child(2){
+	background-color 	: black;
+	transition-timing-function 	: ease-in-out;
+	margin-top: 18px;
+	opacity: 0;
+	transition: all ease .5s;
+}
+.open span:nth-child(3){
+	background-color 	: black;
+	transform: rotate(-45deg);
+	transition-timing-function 	: ease-in-out;
+	margin-top: 0px;
+	position: absolute;
+	top: 18px;
+	right: 8px;
+	width: 25px;
+	transition: all ease .5s;
+	border-radius: 10px; 
+}
+.openMenu{
+	width: 320px;
+	transition: all ease 1s;
+	transition: .5s cubic-bezier(.9, .7, .4, 1.4);
+}
+.leftMenuList{
+	margin-top: 70px;
+    list-style: none;    
     
-/* END COLOR */
-/* DROPDOWN  */
+}
+/* LINEAS */
+.leftMenuList li{
+	width: 250px;
+	/* height: 40px; */
+	line-height: 50px;	
+	/* padding : 5px; */
+    font-size: 13px;
+    margin-left: 5%;
+}
+.leftMenuList li:hover{
+	transition: all ease .5s;
+    cursor	: pointer; 
+    margin-left: 5%;
 
-.dropbtn {
-    background-color:transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdown {
+}
+.leftMenuList li a{
+	text-decoration: none;
+    color	:transparent;  
+    margin-left: 5%;
+    font: 15px Raleway;
+    margin-left: -4%;
+        
+}
+
+.dos{
+  color: snow;
+}
+.leftMenuList li a svg{
+	width	: 40px;
+	height	: 40px;
+	float	: left;
+	margin-left: 5%;   
+}
+
+/* Font  nav lateral */
+.leftMenuList li a span{
+	text-decoration: none;
+	color	: #fff; 
+	margin-left: 0px;
+    width	: 100%;
+    margin-left: 5%;
+}
+.leftMenuList i.fa {
+	font-size: 25px;
+	
+	width: 30px;
+    text-align: center;
+    margin-left: 6%;
+}
+.leftMenuList li ul li{
+	padding: 0px;
+	line-height: 30px;
+	transition: all .4s;
+    box-sizing: border-box;
+    margin-left: 5%;
+}
+
+
+
+.leftMenuList li ul li:hover{
+    transition: all .4s;
+    margin-left: 5%;
+	
+}
+.leftMenuList li ul li ul li{
+	padding: 5px;
+    background: #039dc7;
+    margin-left: 5%;
+}
+.leftMenuList li ul li ul li a span{
+	color: #039dc7;
+}
+.leftMenuList li ul li ul li:hover{
+	background: transparent;
+}
+
+.dropdown {
+	color: #039dc7;
+	text-decoration: none;
+	margin-bottom: 5px;
+	display: block;
     position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
+    margin-left: 10%;
+}
+
+.active + .dropdownlist {
+	width: 100%;
+	height: auto;
+	line-height: 30px;
+	padding: 0px;
+	margin-left: 5%;
+
+
+}
+.hide + .dropdownlist{
+  height:0px;
+}
+
+.dropdownlist {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+.dropdown:before {
+	font-family: FontAwesome;
+	content: "\f105";
+	transition: all .4s;
+	padding-right: 5px;
+	right: 20px;
+	position: absolute;
+	top: 4px;
+}
+.dropdown.active:before {
+	font-family: FontAwesome;
+	content: '\f107';
+	transition: all .4s;
+	padding-right: 5px;
+
+}
+.leftMenu:not(.openMenu)  li > .dropdownlist{
+	pointer-events: none;
+  height:0;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    margin-left: 5%;
+}
+
+.logo3{
+    width: 110px;
+    height: 110px;
+    margin-top: -16%;
     position: absolute;
-    background-color: #3f5f6e;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 1px;
-  }
-  
-  .dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #5e7792}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
- /* RESPONSIVE */
- .iconobitart{
-    text-align: center;
-    padding-top: 15px;
+    margin-left: 200px;
 }
-.logo{
-    width: 103px;
-    list-style: none;
-    margin-left: -62px;
+
+.logo4{
+  width: 170px;
+  height: 140px;
+  margin-top: 14%; 
 }
-.main_header{
+
+/*  nav  */
+
+html, body
+{
+    margin: 0px;
+    background-color: white;
+}
+
+.he1
+{
+    font-family: Raleway;
+
+	padding: 5em 3em;
     text-align: center;
-    list-style: none;
-  justify-content: center;
-  background-color: #161d27;
+    margin-top: 4.4% ;
+    margin-left: 0.9;
+    
     
 }
-/* Para ocultar el boton del menu clickeable*/
-#boton_menu{
-display: none;
-}
-/* Seudoclase desencendiente */
-header label{
-display: none;
-    width: 100px;
-    padding: 10px;
-    background-color: #161d27;
+
+header span
+{
+    color: #fff;
 }
 
-header label:hover{
-cursor: pointer;
+footer span
+{
+  color: #AAA;
 }
-.menu ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: inline-flex;
-}
-.menu li{
-    padding: 20px 50px 0px 50px;
- /*  desde arriba como las manecillas del reloj*/
 
+div.container
+{
+    font-family: 'Times New Roman', Times, serif;
+    
+	padding: 40px 1px;
+    text-align: center;
+    margin-top: -11%;
+    margin-left: 10px;
+    margin-right: -10%;
 }
-/*  padding-top: 15px;
-padding-right: 20px;*/
 
 
-/* Para quitar decoraciones del texto en el menu */
-.menu li a {
-    text-decoration: none;
-    padding: 15px;
-}
-/* Cambia segun el tamaño del dispositivo */
-/* condiciones en () y regla en { }*/
-@media (max-width:920px){
 
-    header label{
-        display: block;
-        height: 70px;
-    }
-        .menu {
-        position: absolute;
-        background: #5e7792;
-        width: 95%;
-        margin-left: -100%;
-        transition: all 0.9s;
-        z-index: 100;
-    }
-   
-    .menu ul {
-        /* Selector avanzado */
-        display: block;
-    }
-    #boton_menu:checked ~ .menu{
-        margin: 0px;
-    }
-    .menu li:hover{
-list-style: none;
-    }
+.red
+{
+    background: #161d27 ;
 }
+
+iv.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+
+ .red a {
+  --fill-color: snow;
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  font: 700 1rem Raleway, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px var(--fill-color);
+  background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+  color: transparent;
+  background-clip: text;
+  transition: 0.5s linear;
+  font-size: 20px;
+  margin-left: 30px;
+  
+}
+.red a:hover {
+    background-size: 100%;
+  }
+
+
+ 
+
+  h1{
+      margin-left: 28%;
+      margin-top: -10%;
+  }
+
+  h2{
+      margin-left: 39%;
+  }

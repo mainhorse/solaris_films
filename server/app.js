@@ -12,9 +12,4 @@ app.use('/api',usuarioRutas);
 app.use('/api',peliculasRutas);
 
 
-
-
-
-
-
 module.exports = app;

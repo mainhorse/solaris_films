@@ -59,20 +59,21 @@ function actualizarPelicula(req,res){
 
 }
 
-function subirDocumento(req,res){
+function subirArchivo(req,res){
     var idPelicula = req.params.id;
     var campo = req.body.tipo;
     var nombreArchivo = "no has subido un archivo";
 
-    if(req.file){
-        var rutaArchivo = req.files.canciones.path;     
+    if(req.files){
+        var rutaArchivo = req.files.archivos.path;  
+        console.log(rutaArchivo);   
         var partirArchivo = rutaArchivo.split('\\');
         var nombreArchivo = partirArchivo[2];
         var extencionMu = nombreArchivo.split('\.');
         var extencionArchivo = extencionMu[1];
         if(campo == 'caratula'){
             if(extencionArchivo == 'png' || extencionArchivo == 'jpg' || extencionArchivo == 'jpeg'){
-                Pelicula.findByIdAndUpdate(idPelicula, {caratula : nombreArchivo},(err,caratulaNueva)=>{
+                Pelicula.findByIdAndUpdate(idPelicula, {cartelera : nombreArchivo},(err,caratulaNueva)=>{
                     if(err){
                         res.status(500).send({message : 'Error en el servidor'});
                     }else {
@@ -87,8 +88,8 @@ function subirDocumento(req,res){
                     }
                 })
         }
-        } else if(campo = 'trailer'){
-            if(extencionArchivo == 'mp4' || extencionArchivo == 'mkv' || extencionArchivo == 'avi'){
+        } else if(campo == 'trailer'){
+            if(extencionArchivo == 'mp4' || extencionArchivo == 'mov' || extencionArchivo == 'avi'){
                 Pelicula.findByIdAndUpdate(idPelicula, {linkTrailer : nombreArchivo},(err, trailer)=>{
                     if(err){
                         res.status(500).send({message : 'Error en el servidor'});
@@ -105,6 +106,7 @@ function subirDocumento(req,res){
                 })
             }
         } else if(campo == 'pelicula'){
+            if(extencionArchivo == 'mp4' || extencionArchivo == 'mov' || extencionArchivo == 'avi'){
             Pelicula.findByIdAndUpdate(idPelicula, {linkPelicula : nombreArchivo},(err, pelicula)=>{
                 if(err){
                     res.status(500).send({message : 'Error en el servidor'});
@@ -113,12 +115,13 @@ function subirDocumento(req,res){
                         res.status(200).send({message : 'No se pudo cargar el trailer'});
                     } else{
                         res.status(200).send({
-                            message : 'Se guardo el trailer',
+                            message : 'Se guardo la pelicula',
                             pelicula : pelicula
                         })
                     }
                 }
             })
+        }
 
         } else{
             res.status(200).send({message : 'no se encontraon concidencias en el documento'});
@@ -129,11 +132,49 @@ function subirDocumento(req,res){
 }
 
 function buscarPelicula(){
+}
 
+
+function mostrarArchivo(req, res){
+    // pedir el archivo que queremos mostrar
+
+    var archivo = req.params.imageFile;
+    console.log(`La caratula es : ${archivo}`);
+    // Ubicacion del archivo
+    var ruta = './archivos/peliculas/' + archivo;
+
+    // validar si existe o no
+    // fs.exists('la ruta del archivo'. (existe)=>{})
+    fs.exists(ruta,(exist)=>{
+        if(exist){
+            res.sendFile(path.resolve(ruta));
+        } else{
+            res.status(200).send({message: "Caratula no encontrada"});
+        }
+    })
+}
+
+function buscarPelicula(req,res){
+    var archivo = req.params.archivos;
+    console.log(archivo);
+    // Ubicacion del archivo
+    var ruta = './archivos/peliculas/' + archivo;
+
+    // validar si existe o no
+    // fs.exists('la ruta del archivo'. (exiate)=>{})
+    fs.exists(ruta,(exist)=>{
+        if(exist){
+            res.sendFile(path.resolve(ruta));
+        } else{
+            res.status(200).send({message: "Pelicula no disponible"});
+        }
+    })
 }
 
 module.exports = {
     peliculaNueva,
     actualizarPelicula,
-    subirDocumento
+    subirArchivo,
+    mostrarArchivo,
+    buscarPelicula
 }

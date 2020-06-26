@@ -9,7 +9,8 @@ var api = express.Router();
 
 api.post('/nuevaPelicula',PeliculaControl.peliculaNueva);
 api.put('/actualizarPelicula/:id', PeliculaControl.actualizarPelicula);
-
-
+api.put('/archivoNuevo/:id',subirArchivo , PeliculaControl.subirArchivo);
+api.get('/caratula/:imageFile', PeliculaControl.mostrarArchivo);
+api.get('/pelicula/:archivos',PeliculaControl.buscarPelicula);
 
 module.exports = api;
