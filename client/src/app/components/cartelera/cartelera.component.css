@@ -24,6 +24,7 @@
 	align-items: center;
 	justify-content: center;
 	font-family: 'Montserrat', sans-serif;
+
 }
 
 .wrapper {
@@ -82,12 +83,15 @@
     padding: 1.5em;
     transform: translateZ(80px) scale(0.94);
 }
+.front img{
+	width: 100%;
+	height: 340px;
+	margin-top: -99px;
 
+}
 .front {
 	background-color: #fff;
-	background-size: cover;
-    background-position: center center;}
-    
+}
 	.front.inner {
 		grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
 		justify-items: center;
@@ -133,8 +137,20 @@
 		align-items: center;
 		color: #355cc9;
 		grid-row: 3;
+		font-family:'Space','Montserrat', sans-serif ;
+		font-size: 14px;
 		
-        }
+		
+		}
+		
+		.img-trailer{
+			float: right;
+			position: relative;
+		display: inline-flex;
+		height: 30px;
+		margin: 2px;
+		
+		}
         .back .info:not(:first-of-type):before {
 			content: '';
 			position: absolute;
@@ -161,7 +177,8 @@
         }
 .back .icon img{
     width: 66px;
-    height: 42px;
+	height: 42px;
+
 }
 
 	.back .description {
@@ -172,8 +189,9 @@
 		font-weight: 600;
 		line-height: 1.4em;
 		overflow: auto;
-		color: #355cc9;
+		color: #330867;
 		padding: 10px;
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	}
 
 	.back .location,
@@ -206,7 +224,6 @@
 	letter-spacing: 1px;
 	font-weight: 600;
 	cursor: pointer;
-	display: block;
 	line-height: 2.9em;
 	min-width: 3em;
 	background-color: transparent;
@@ -219,7 +236,12 @@
 	transition: 0.3s ease-in-out;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
     writing-mode: vertical-lr;
-    border-style: dashed;
+	border-style: dashed;
+}
+.botton a{
+	float: left;
+	background-color: transparent;
+	
 }
 
 	.botton:hover {
@@ -243,8 +265,12 @@
         
     .button .return .imglabel{
             width: 2px;
-            height: 2px;
-        }
+			height: 2px;
+		}
+		.comeback{
+			height: 17px;
+			float: left;
+		}
     
         .button2 {
             grid-row: -1;
@@ -263,7 +289,9 @@
             transition: 0.3s ease-in-out;
             text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
             border-style:inset;
-            background-image: linear-gradient(to right,#039dc7,black);
+			background-image: linear-gradient(to right, #30cfd0, #330867);
+			padding: 9px;
+			margin: 14px;
         }
         
             .botton2:hover {
