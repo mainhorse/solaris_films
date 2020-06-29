@@ -14,6 +14,7 @@ var PeliculaSchema = new Schema({
     tiempo : String,
     calidad : String,
     tipo : String,
+    busqueda : String,
     estado : Boolean    
 });
 module.exports = mongoose.model('Pelicula', PeliculaSchema);

@@ -58,4 +58,23 @@ url = 'http://localhost:3000/api/';
       formData
     ).pipe(map(res => res));
   }
+
+  buscarPeliculasAdm(objeto){
+    let params = JSON.stringify(objeto);
+    let options = {
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
+    };
+    return this._http.post(
+      this.url + 'buscarPeliculas',
+      params,
+      options
+    ).pipe(map(res => res))
+
+  }
+
+  eliminarPelicula(peliculaId){
+    return this._http.delete(
+      this.url + 'eliminarPelicula/' + peliculaId
+    ).pipe(map(res => res))
+  }
 }

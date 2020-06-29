@@ -14,13 +14,16 @@ export class IngresoComponent implements OnInit {
   public usuarioIngreso : Usuario;
   public pelicula : Pelicula;
   public identidad;
+  public tipoUsuario = String;
+  public inicio = 0;
+  public final = 0;
 
   constructor(
     private usuarioServicio : UsuarioService,
     private _router : Router
   ) {
     this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
-    this.pelicula = new Pelicula("","","","","","","","","",0,"","","",true);
+    this.pelicula = new Pelicula("","","","","","","","","",0,"","","","",true);
    }
 
   ngOnInit(): void {
@@ -55,17 +58,26 @@ export class IngresoComponent implements OnInit {
                     localStorage.setItem('sesion',JSON.stringify(datosUsuario));
                     localStorage.setItem('pelicula', JSON.stringify(this.pelicula));
                     let usuario = JSON.parse(localStorage.getItem('sesion'));
-
-                    if(usuario.rol == "administrador"){
+            
+                    for(let i = 0 ; i < this.usuarioIngreso.correo.length ; i++){
+                        if(this.usuarioIngreso.correo[i] == '@'){
+                            this.inicio = i;
+                        }
+                    }
+                    
+                    let correo = this.usuarioIngreso.correo;
+                    let correoUsu = correo.substr(this.inicio,8);
+                    console.log(correoUsu);
+                    console.log(this.inicio)
+                    if(correoUsu == "@solaris"){
+                        alert("administrador")
                         localStorage.setItem('pagina','administrador'); 
-                        this._router.navigate(['/'])
                     } else {
+                        alert("usuario")
                         localStorage.setItem('pagina','usuario'); 
                         this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
-                        this._router.navigate(['/']);
-                    }                                               
-                    //this.identidad = this.usuarioServicio.obtenerNombreUsuario();                    
-                     window.location.reload();    
+                    }  
+                    window.location.reload();    
         }
     },
     error =>{

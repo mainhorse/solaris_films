@@ -4,17 +4,29 @@
     <app-nav-inicio></app-nav-inicio>  
     <router-outlet></router-outlet>
     <app-slider></app-slider>
+    <app-cartelera></app-cartelera>
+    <app-footer></app-footer>
 </div>
 
 <div *ngIf='pagina == "usuario"' id="usuario">
-    <app-nav-inicio></app-nav-inicio> 
-    <app-pelicula-adm></app-pelicula-adm>
+    <app-nav-inicio></app-nav-inicio>
+    <app-footer></app-footer>
 </div>
 
-<!--
-<app-slider-food></app-slider-food>
-<app-comida></app-comida> 
--->
+<div *ngIf='pagina == "administrador"' id="administrador">
+    <app-nav-inicio></app-nav-inicio>
+    <app-pelicula-adm></app-pelicula-adm>
+    <app-sala></app-sala>
+    <app-footer></app-footer>
+</div>
+
+<div *ngIf='pagina == "comida"' id="comida">
+    <app-slider-food></app-slider-food>
+    <app-comida></app-comida> 
+    <app-footer></app-footer>
+</div>
+
+
   
 
 
