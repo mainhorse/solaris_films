@@ -26,6 +26,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
+import { EmpresaComponent } from './components/empresa/empresa.component';
 
 
 
@@ -45,9 +46,12 @@ import { HeaderComponent } from './components/header/header.component';
     SliderFoodComponent,
     CarteleraComponent,
     SalaComponent,
+    HeaderComponent,
+    EmpresaComponent,
     RegistroComponent,
     IngresoComponent,
     HeaderComponent
+
   ],
   imports: [
     BrowserModule,

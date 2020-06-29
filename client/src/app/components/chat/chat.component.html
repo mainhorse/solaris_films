@@ -1,1 +1,16 @@
-<p>chat works!</p>
+<div class="wrapper">
+	<div class="chat">
+		<div class="reminder">Bienvenid@ {{userChat.usuario}}</div> <button id="btn" routerLink = "/">x</button>
+		<div class="chatbox">
+			<div class="messages-wrapper">
+				<div class="status">Conectad@, puedes escribir...</div>
+			</div>
+		</div>
+		<div class="reply">
+			<div class="typing"></div>
+			<div class="wrapper">
+				<input class="usermsg" (change) = "misMensajes" type="text" placeholder="Escribe Hola!"/> <button class="send">Enviar</button>
+			</div>
+		</div>
+	</div>
+</div>

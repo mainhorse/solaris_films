@@ -16,6 +16,10 @@ font-size: 17px;
 
 }
 
+.main-content{
+  background-image: linear-gradient(to right, #039dc7, #2D89D6);
+}
+
 
 /* SLIDER */
 
@@ -30,7 +34,8 @@ font-size: 17px;
 	display: flex;
 	padding: 0;
     width: 400%;
-	animation: cambio 20s infinite alternate linear;
+  animation: cambio 20s infinite alternate linear;
+  list-style: none;
 }
 
 .slider li {
@@ -80,9 +85,9 @@ font-size: 17px;
       margin: 0px auto;
       padding: 50px 0;
       clear: both;
-      background: #EEE; 
       overflow-x:hidden;
       float: left;
+      margin-left: 76px;
   }
   @media only screen and (min-width: 1200px) {
       .container {
@@ -139,6 +144,7 @@ font-size: 17px;
   }
   .mcd-menu li {
     position: relative;
+    list-style: none;
     /*float:left;*/
   }
   .mcd-menu li a {
