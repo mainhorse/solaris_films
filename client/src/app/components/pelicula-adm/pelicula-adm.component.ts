@@ -12,21 +12,18 @@ export class PeliculaAdmComponent implements OnInit {
   public pelicula : Pelicula;
   public archivoSubir : File;
   public url : String;
-  caratula = 'caratula/'; 
   constructor(
     private peliculaService : PeliculasService,
   ) { 
-    this.pelicula = new Pelicula("","","","","","","","","",0,"","","",true);
-    this.url =  peliculaService.url; 
-    
+    this.url =  peliculaService.url;  
+    this.pelicula = new Pelicula("","","","","","","","","",0,"","","","",true);
   }
 
-  ngOnInit(): void {
-    this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
+ngOnInit(): void {
+  //this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
+}
 
-  }
-
-  nuevaPelicula(){
+nuevaPelicula(){
     this.peliculaService.PeliculaNueva(this.pelicula).subscribe(
       (response : any)=> {
         let resultado = response.pelicula;
@@ -35,8 +32,9 @@ export class PeliculaAdmComponent implements OnInit {
          alert(mensaje);
        } else{
          localStorage.setItem('pelicula',JSON.stringify(resultado));
+         this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
          alert('pelicula guardada');
-         window.location.reload();
+         
        }
       },error =>{
         var errorMensaje = <any>error;
@@ -45,13 +43,15 @@ export class PeliculaAdmComponent implements OnInit {
         }
       }
       )
-  }
+}
 
 subirArchivo(fileInput : any){
   this.archivoSubir = <File>fileInput.target.files[0];
 }    
 
 subirPelicula(){
+  let peliculaId = JSON.parse(localStorage.getItem('pelicula'));
+  this.pelicula._id = peliculaId._id;
   this.peliculaService.ArchivoNuevo(this.archivoSubir, this.pelicula._id, this.pelicula.tipo).subscribe(
     (response : any)=>{
       let respuesta = response.pelicula;
@@ -59,16 +59,13 @@ subirPelicula(){
       if(!respuesta){
         alert(mensaje);
       } else {
-        console.log(response.cartelera); 
+        this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
         this.pelicula = respuesta; 
         localStorage.setItem('pelicula',JSON.stringify(respuesta));
         alert(mensaje);
-      
-        //window.location.reload();
         let rutaImg = this.url + 'caratula/' + this.pelicula.cartelera;
-        //document.getElementById('cartelera').setAttribute('src',rutaImg);
         document.getElementById('fondoCartelera').setAttribute("style", "background-image: url('" + this.url + 'caratula/' + this.pelicula.cartelera + "'); width: 100%; height: 100%");
-    
+        document.getElementById('cartelera').setAttribute('src', rutaImg);
       }
 
     }, error =>{
@@ -80,7 +77,10 @@ subirPelicula(){
     )
 
 }
+
 actualizarPelicula(){
+  let peliculaId = JSON.parse(localStorage.getItem('pelicula'));
+  this.pelicula._id = peliculaId._id;
     this.peliculaService.ActualizarPelicula(this.pelicula._id,this.pelicula).subscribe((response : any)=>{
       let respuesta = response.pelicula;
       let mensaje = response.message;
@@ -98,7 +98,44 @@ actualizarPelicula(){
     })
 }
 
-reproducirVideo(){
+buscarPeliculas(){
+  this.peliculaService.buscarPeliculasAdm(this.pelicula).subscribe(
+    (response : any)=>{
+      let respuesta = response.pelicula;
+      let mensaje = response.message;
+      if(respuesta && respuesta.length != 0){ 
+        localStorage.setItem('pelicula',JSON.stringify(respuesta));
 
+        this.pelicula = {_id : respuesta.id , titulo : respuesta.titulo , director : respuesta.director,
+        linkTrailer : respuesta.linkTrailer, linkPelicula : respuesta.linkPelicula , cartelera : respuesta.cartelera,
+        sinopsis : respuesta.sinopsis, clasificacion : respuesta.clasificacion , fechaEstreno : respuesta.fechaEstreno,
+        puntuacion : respuesta.puntuacion, tiempo:respuesta.tiempo, calidad : respuesta.calidad, tipo : respuesta.tipo,
+        busqueda: respuesta.busqueda , estado : respuesta.estado}
+        alert(mensaje);
+      } else {        
+        alert(mensaje)
+      }
+    })
+}
+
+eliminarPelicula(){
+  let peliculaId = JSON.parse(localStorage.getItem('pelicula'));
+  this.pelicula._id = peliculaId._id;
+  this.peliculaService.eliminarPelicula(this.pelicula._id).subscribe((response : any)=>{
+    let eliPelicula = response.pelicula;
+    let mensaje = response.message;
+    if(!eliPelicula){
+      alert(mensaje)
+    } else {
+      alert(mensaje)
+    }
+  }, error =>{
+    let errorMensaje = <any>error;
+    if(errorMensaje =! null){
+      console.log(errorMensaje);
+    }
+  }
+
+    )
 }
 }

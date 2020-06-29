@@ -13,6 +13,7 @@ export class Pelicula{
         public tiempo : String,
         public calidad : String,
         public tipo : String,
+        public busqueda : String,
         public estado : Boolean  
     ){}
 }

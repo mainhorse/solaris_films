@@ -49,7 +49,9 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
     HeaderComponent,
     EmpresaComponent,
     RegistroComponent,
-    IngresoComponent
+    IngresoComponent,
+    HeaderComponent
+
   ],
   imports: [
     BrowserModule,

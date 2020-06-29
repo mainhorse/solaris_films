@@ -16,10 +16,7 @@ function NuevoUsuario(req,res){
     usuario.telefono = parametros.celular;
     usuario.subscripcion = parametros.subscripcion;
     usuario.estado = parametros.estado;
-    var tipoUsuario = usuario.rol.toLowerCase();
-    usuario.rol = tipoUsuario;
-    if(tipoUsuario == 'depredador' || tipoUsuario == 'alien'){
-        if(usuario.correo != '' || usuario.contrasena != ''){
+    if(usuario.correo != '' || usuario.contrasena != ''){
             Usuario.findOne({correo : usuario.correo}, (err, usuarioNuevo)=>{
                 if(err){
                     res.status(500).send({message : "Error en el servidor"});
@@ -44,11 +41,10 @@ function NuevoUsuario(req,res){
                     }
                 }
             },)
-          } 
-    }
-      else {
+    } 
+    else {
         res.status(200).send({message : "hubo un error en tu ingreso, vuelve a intentar"});
-      }
+    }
 }
 
 function Ingresar(req,res){

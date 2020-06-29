@@ -19,18 +19,26 @@
             #calidad="ngModel" [(ngModel)]= "pelicula.calidad">
             <input class="datos" type="text" placeholder="estado" name="estado"
             #estado="ngModel" [(ngModel)]="pelicula.estado">
+            <button id="botonAgregar" type="submit" (click)="nuevaPelicula()">Pelicula Nueva</button>
+            <button id="botonActualizar" type="submit" (click)="actualizarPelicula()">Actualizar</button>
             <input type="file" class="datos" (change)="subirArchivo($event)">
             <input class="datos" type="text" placeholder="tipo de documento" name="tipo"
             #tipo="ngModel" [(ngModel)] = "pelicula.tipo">
-            <button id="botonAgregar" type="submit" (click)="nuevaPelicula()">Pelicula N</button>
-            <button id="botonDocumento" type="submit" (click)="subirPelicula()">pelicula D</button>
-            <button id="botonActualizar" type="submit" (click)="actualizarPelicula()">Actualizar</button>
-        </form> 
+            <button id="botonDocumento" type="submit" (click)="subirPelicula()">Archivo</button>
+            <button id="bEliminar" type="submit" (click) = "eliminarPelicula()">Eliminar Pelicula</button>
+        </form>    
+        <form #formularioBusqueda='ngForm'> 
+            <input type="text" class="datos" placeholder="busqueda" name="busqueda"
+            #busqueda="ngModel" [(ngModel)]="pelicula.busqueda">
+            <button id="botonBuscar" type="submit" (click)="buscarPeliculas()">Buscar</button>
+        </form>
     </aside>
     <aside id="der">
+        <div id="busqueda">           
+        </div>
         <div id="pelicula">
             <div id="trailer">
-                <video src = "{{ this.url + 'caratula/' + this.pelicula.linkTrailer }}"  width="100%" height="100%" style="margin-top: -5%;" controls></video>
+                <video id="trailerPelicula" src = "{{ this.url + 'caratula/' + this.pelicula.linkTrailer }}"  width="100%" height="100%" style="margin-top: -5%;" controls></video>
             </div>
         </div>
         <div id="sinopsis">
@@ -38,7 +46,7 @@
                 <input type="checkbox" id="card1" class="more" aria-hidden="true">
                 <div class="content">
                     <div class="front" style="background-image: url('rutaImg'); background-size: 100% 100% ; width: 100%" id="fondoCartelera">
-                    
+                    <img src= "{{ this.url + 'caratula/' + this.pelicula.cartelera}}" id="cartelera">
                         <div class="inner">
                             <label for="card1" class="button" aria-hidden="true">
                                 Detalles

@@ -20,6 +20,7 @@ function peliculaNueva(req,res){
   pelicula.tiempo = parametros.tiempo;
   pelicula.calidad = parametros.calidad;
   pelicula.tipo = parametros.tipo;
+  pelicula.busqueda = parametros.busqueda;
   pelicula.estado = parametros.estado;
 
   pelicula.save((err, nuevaPelicula)=>{
@@ -65,13 +66,12 @@ function subirArchivo(req,res){
     var nombreArchivo = "no has subido un archivo";
 
     if(req.files){
-        var rutaArchivo = req.files.archivos.path;  
-        console.log(rutaArchivo);   
+        var rutaArchivo = req.files.archivos.path;    
         var partirArchivo = rutaArchivo.split('\\');
         var nombreArchivo = partirArchivo[2];
         var extencionMu = nombreArchivo.split('\.');
         var extencionArchivo = extencionMu[1];
-        if(campo == 'caratula'){
+        if(campo == 'cartelera'){
             if(extencionArchivo == 'png' || extencionArchivo == 'jpg' || extencionArchivo == 'jpeg'){
                 Pelicula.findByIdAndUpdate(idPelicula, {cartelera : nombreArchivo},(err,caratulaNueva)=>{
                     if(err){
@@ -81,7 +81,7 @@ function subirArchivo(req,res){
                             res.status(200).send({message : 'No se pudo cargar la caratula'});
                         } else {
                             res.status(200).send({
-                                message : 'ya tienes una caratula',
+                                message : 'ya tienes una cartelera',
                                 pelicula : caratulaNueva
                             })
                         }
@@ -132,6 +132,22 @@ function subirArchivo(req,res){
 }
 
 function buscarPelicula(){
+    // pedir el archivo que queremos mostrar
+
+    var archivo = req.params.archivos;
+    console.log(`La pelicula es : ${archivo}`);
+    // Ubicacion del archivo
+    var ruta = './archivos/peliculas/' + archivo;
+
+    // validar si existe o no
+    // fs.exists('la ruta del archivo'. (existe)=>{})
+    fs.exists(ruta,(exist)=>{
+        if(exist){
+            res.sendFile(path.resolve(ruta));
+        } else{
+            res.status(200).send({message: "Pelicula no encontrada"});
+        }
+    })
 }
 
 
@@ -154,20 +170,54 @@ function mostrarArchivo(req, res){
     })
 }
 
-function buscarPelicula(req,res){
-    var archivo = req.params.archivos;
-    console.log(archivo);
-    // Ubicacion del archivo
-    var ruta = './archivos/peliculas/' + archivo;
+function buscarPeliculas(req, res){
+    let parametros = req.body;
+    let busquedaPelicula = parametros.busqueda;
+    console.log(`este es el valor de la busqueda: ${busquedaPelicula}`);
+    if(busquedaPelicula != undefined || busquedaPelicula != null){
+        Pelicula.findOne({ titulo : { $regex: '.*' + busquedaPelicula + '.*'}}, (err, peliculaEncontrada)=>{
+            if(err){
+                res.status(500).send({message : "Error en el servidor"});
+            } else{
+                if(!peliculaEncontrada){
+                    res.status(200).send({message : "No se encontraron concidencias"});
+                } else{
+                    if(peliculaEncontrada.length == 0){
+                        res.status(200).send({message : 'no se encontraron resultados'})
+                    } else if(peliculaEncontrada.length != 0){
+                        res.status(200).send({
+                            message : "Se encontro una pelicula",
+                            pelicula : peliculaEncontrada
+                        
+                    });
+                    }
+                }
+            }
+        })
+    } 
+   
+}
 
-    // validar si existe o no
-    // fs.exists('la ruta del archivo'. (exiate)=>{})
-    fs.exists(ruta,(exist)=>{
-        if(exist){
-            res.sendFile(path.resolve(ruta));
-        } else{
-            res.status(200).send({message: "Pelicula no disponible"});
+function eliminarPelicula(req,res){
+    let id = req.params.id;
+    Pelicula.findByIdAndDelete(id,(err, peliculaEliminada)=>{
+        if(err){
+            res.status(500).send({ message : 'Error en el servidor'});
+        }else {
+            if(!peliculaEliminada){
+                res.status(200).send({message: "No se pudo eliminar la pelicula"});
+            } else{
+                res.status(200).send({
+                    message : 'Pelicula eliminada',
+                    pelicula : peliculaEliminada
+                })
+            }
         }
+    }, err =>{
+        let errorMensaje = err
+            if(errorMensaje != null){
+                console.log(errorMensaje)
+            }
     })
 }
 
@@ -176,5 +226,7 @@ module.exports = {
     actualizarPelicula,
     subirArchivo,
     mostrarArchivo,
-    buscarPelicula
+    buscarPelicula,
+    buscarPeliculas, 
+    eliminarPelicula
 }

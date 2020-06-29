@@ -1,5 +1,4 @@
 
-
 <div *ngIf='pagina == undefined'>
     <app-nav-inicio></app-nav-inicio>  
     <router-outlet></router-outlet>
@@ -9,6 +8,12 @@
 </div>
 
 <div *ngIf='pagina == "usuario"' id="usuario">
+    <app-nav-inicio></app-nav-inicio>
+    <app-footer></app-footer>
+</div>
+
+<div *ngIf='pagina == "administrador"' id="administrador">
+    <app-nav-inicio></app-nav-inicio>
     <app-header></app-header> 
     <app-pelicula-adm></app-pelicula-adm>
     <app-sala></app-sala>
@@ -34,6 +39,7 @@
 <div *ngIf='pagina == "nosotros"' id="home">
    <app-empresa></app-empresa> 
 </div>
+
 
 
 

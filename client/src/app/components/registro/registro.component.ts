@@ -34,7 +34,7 @@ export class RegistroComponent implements OnInit {
             }else {
                alert(mensaje);
                 this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
-                this._router.navigate(['/'])
+                this._router.navigate(['/']);
             }
         },
         error =>{

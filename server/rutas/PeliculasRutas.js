@@ -12,5 +12,6 @@ api.put('/actualizarPelicula/:id', PeliculaControl.actualizarPelicula);
 api.put('/archivoNuevo/:id',subirArchivo , PeliculaControl.subirArchivo);
 api.get('/caratula/:imageFile', PeliculaControl.mostrarArchivo);
 api.get('/pelicula/:archivos',PeliculaControl.buscarPelicula);
-
+api.post('/buscarPeliculas',PeliculaControl.buscarPeliculas)
+api.delete('/eliminarPelicula/:id',PeliculaControl.eliminarPelicula)
 module.exports = api;
