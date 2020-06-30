@@ -131,14 +131,11 @@ function subirArchivo(req,res){
 
 }
 
-function buscarPelicula(){
+function buscarPelicula(req,res){
     // pedir el archivo que queremos mostrar
-
     var archivo = req.params.archivos;
-    console.log(`La pelicula es : ${archivo}`);
     // Ubicacion del archivo
     var ruta = './archivos/peliculas/' + archivo;
-
     // validar si existe o no
     // fs.exists('la ruta del archivo'. (existe)=>{})
     fs.exists(ruta,(exist)=>{
@@ -149,7 +146,6 @@ function buscarPelicula(){
         }
     })
 }
-
 
 function mostrarArchivo(req, res){
     // pedir el archivo que queremos mostrar
@@ -172,7 +168,7 @@ function mostrarArchivo(req, res){
 
 function buscarPeliculas(req, res){
     let parametros = req.body;
-    let busquedaPelicula = parametros.busqueda;
+    let busquedaPelicula = parametros.busqueda.toLowerCase();
     console.log(`este es el valor de la busqueda: ${busquedaPelicula}`);
     if(busquedaPelicula != undefined || busquedaPelicula != null){
         Pelicula.findOne({ titulo : { $regex: '.*' + busquedaPelicula + '.*'}}, (err, peliculaEncontrada)=>{

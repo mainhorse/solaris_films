@@ -67,7 +67,7 @@ html, body {
   word-break: break-word;
 }
 .chat .chatbox .message .avatar {
-  background: #fff url("../../../assets/img/cliente.png");
+  background: #fff url("../../../assets/img/alien.jpg");
   background-size: cover;
   width: 40px;
   height: 40px;
@@ -82,7 +82,7 @@ html, body {
   background: rgba(255, 255, 255, 0.1);
 }
 .chat .chatbox .them .avatar {
-  background: url("../../../assets/img/admin.png");
+  background: url("../../../assets/img/2d.png");
   background-size: cover;
   float: right;
   margin: 5px;

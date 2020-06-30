@@ -71,28 +71,96 @@ function Ingresar(req,res){
 function ModificarDatos(req,res){
     var idUsuario = req.params.id;
     var datos = req.body;
-    Usuario.findByIdAndUpdate(idUsuario,datos, (err, usuarioActualizado)=>{
-        if(err){
-            res.status(500).send({message : "Error en el servidor"});
-        } else {
-            if(!usuarioActualizado){
-                res.status(200).send({message : "no se pudo actualizar tus datos"});
+        Usuario.findByIdAndUpdate(idUsuario,datos, (err, usuarioActualizado)=>{
+            if(err){
+                res.status(500).send({message : "Error en el servidor"});
             } else {
-                res.status(200).send({
-                    message : "Datos Actualizados",
-                    usuario : usuarioActualizado
-                })
+                if(!usuarioActualizado){
+                    res.status(200).send({message : "no se pudo actualizar tus datos"});
+                } else {
+                   res.status(200).send({
+                       message : "Datos Actualizados",
+                       usuario : usuarioActualizado
+                   })
+                   
+                }
             }
+        })
+  
+}
+
+function subirFoto(req,res){
+    var idUsuario = req.params.id;
+    if (req.files) {        
+        var rutaArchivo = req.files.imagen.path;
+        var partirArchivo = rutaArchivo.split('\\');
+        var nombreArchivo = partirArchivo[2];
+        var extensionImg = nombreArchivo.split('\.');
+        var extensionArchivo = extensionImg[1];
+        if(extensionArchivo == 'png' || extensionArchivo == 'jpg' || extensionArchivo == 'jpeg' ){
+            Usuario.findByIdAndUpdate(idUsuario, {imagen : nombreArchivo}, (err, fotoActualizada)=>{
+                if(err){
+                    res.status(200).send({message : "Error en el servidor"})
+                } else{
+                    if(!fotoActualizada){
+                        res.status(200).send({message : "no se pudo actualizar la foto de perfil"})
+                    }else{
+                        res.status(200).send({
+                            message: "Foto actualizada",
+                            usuario : fotoActualizada
+                        })
+                    }
+                }
+            })
+        }
+    } else {
+        res.status(200).send({message : "no subiste una foto de perfil"});
+    }
+}
+
+function mostrarArchivo(req, res) {
+    // pedir el archivo que queremos mostrar
+
+    var archivo = req.params.imageFile;
+    // Ubicacion del archivo
+    var ruta = './archivos/usuario/' + archivo;
+
+    // validar si existe o no
+    // fs.exists('la ruta del archivo'. (exiate)=>{})
+    fs.exists(ruta, (exist) => {
+        if (exist) {
+            res.sendFile(path.resolve(ruta));
+        } else {
+            res.status(200).send({ message: "imagen no encontrada" });
         }
     })
 }
 
+function buscarUsuario(req,res){
+    correoUsuario = req.body.correo;
+    Usuario.find({correo : correoUsuario},(err, buscarUsuario)=>{
+        if(err){
+            res.status(500).send({message : "Error en el servidor"})
+        } else {
+            if(!buscarUsuario){
+                res.status(200).send({message : "no tenemos registrado a ningun usuario con ese correo"})
+            } else{
+                res.status(200).send({
+                    message : "se encontro un usuario con ese correo",
+                    usuario  : buscarUsuario
+                })
+            }
+        }
+    })
 
-
+}
 
 
 module.exports = {
     NuevoUsuario,
     Ingresar,
-    ModificarDatos
+    ModificarDatos,
+    subirFoto,
+    mostrarArchivo,
+    buscarUsuario
 }

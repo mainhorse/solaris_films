@@ -156,8 +156,6 @@ h1{
     margin-left: 5%;
 }
 
-
-
 .leftMenuList li ul li:hover{
     transition: all .4s;
     margin-left: 5%;
@@ -325,9 +323,6 @@ iv.topBotomBordersOut a:before, div.topBotomBordersOut a:after
     background-size: 100%;
   }
 
-
- 
-
   h1{
       margin-left: 28%;
       margin-top: -10%;
@@ -335,5 +330,13 @@ iv.topBotomBordersOut a:before, div.topBotomBordersOut a:after
 
   h2{
       margin-left: 39%;
+  }
+
+  .inpUsuario{
+	  width : 80%;
+	  height : 20%;
+	  margin-left: 7%;
+	  padding: 2%;
+	  border-radius: 5px;	
   }
 

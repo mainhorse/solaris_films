@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
-import { CargarScriptService } from "../../services/cargarScript.service";
-
 import { PeliculasService} from '../../services/peliculas.service';
-
+import { Pelicula} from '../../modelo/pelicula';
+import { CargarScriptService } from "../../services/cargarScript.service";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Pelicula} from '../../modelo/pelicula';
 
 @Component({
   selector: 'app-sala',
@@ -19,17 +16,15 @@ public url : String;
 public pelicula : Pelicula ;
 
   constructor( private _CargaScripts: CargarScriptService,
-    private peliculaService: PeliculasService) {
+    private peliculaService: PeliculasService
+    ) {
  _CargaScripts.Carga(["controles"]);
-
- this.pelicula = JSON.parse(localStorage.getItem("pelicula"));
-
  this.url =  peliculaService.url;
+ this.pelicula = JSON.parse(localStorage.getItem("pelicula"));
   }
 
   ngOnInit(): void {
-this.reproducir();
-
+  this.reproducir();
   }
 
 reproducir(){

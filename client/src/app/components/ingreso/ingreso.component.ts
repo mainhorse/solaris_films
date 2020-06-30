@@ -50,14 +50,14 @@ export class IngresoComponent implements OnInit {
                     this.usuarioIngreso.compras,
                     this.usuarioIngreso.direccion,
                     this.usuarioIngreso.celular,
-                    this.usuarioIngreso.subcripcion,
+                    this.usuarioIngreso.suscripcion,
                     this.usuarioIngreso.estado
                    
                 );
                     // creamos el objeto localStorage  
                     localStorage.setItem('sesion',JSON.stringify(datosUsuario));
                     localStorage.setItem('pelicula', JSON.stringify(this.pelicula));
-                    let usuario = JSON.parse(localStorage.getItem('sesion'));
+                    //let usuario = JSON.parse(localStorage.getItem('sesion'));
             
                     for(let i = 0 ; i < this.usuarioIngreso.correo.length ; i++){
                         if(this.usuarioIngreso.correo[i] == '@'){
@@ -67,17 +67,17 @@ export class IngresoComponent implements OnInit {
                     
                     let correo = this.usuarioIngreso.correo;
                     let correoUsu = correo.substr(this.inicio,8);
-                    console.log(correoUsu);
-                    console.log(this.inicio)
                     if(correoUsu == "@solaris"){
                         alert("administrador")
                         localStorage.setItem('pagina','administrador'); 
+                        this._router[('/')]
+                       
                     } else {
                         alert("usuario")
                         localStorage.setItem('pagina','usuario'); 
-                        this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
                     }  
                     window.location.reload();    
+                    
         }
     },
     error =>{

@@ -10,7 +10,7 @@ export class Usuario{
         public compras : [],
         public direccion : String,
         public celular : Number,
-        public subcripcion : String,
+        public suscripcion : String,
         public estado : Boolean
     ){ }
 }

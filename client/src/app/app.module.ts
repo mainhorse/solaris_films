@@ -27,6 +27,8 @@ import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
+import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
+
 
 
 
@@ -50,7 +52,8 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
     EmpresaComponent,
     RegistroComponent,
     IngresoComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavAdminComponent
 
   ],
   imports: [
