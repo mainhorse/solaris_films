@@ -20,7 +20,7 @@ export class PeliculaAdmComponent implements OnInit {
   }
 
 ngOnInit(): void {
-  //this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
+  
 }
 
 nuevaPelicula(){
@@ -105,7 +105,6 @@ buscarPeliculas(){
       let mensaje = response.message;
       if(respuesta && respuesta.length != 0){ 
         localStorage.setItem('pelicula',JSON.stringify(respuesta));
-
         this.pelicula = {_id : respuesta.id , titulo : respuesta.titulo , director : respuesta.director,
         linkTrailer : respuesta.linkTrailer, linkPelicula : respuesta.linkPelicula , cartelera : respuesta.cartelera,
         sinopsis : respuesta.sinopsis, clasificacion : respuesta.clasificacion , fechaEstreno : respuesta.fechaEstreno,

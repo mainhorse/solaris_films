@@ -10,5 +10,7 @@ var api = express.Router();
 api.post('/registro', UsuarioControl.NuevoUsuario);
 api.post('/ingreso', UsuarioControl.Ingresar);
 api.put('/actualizar/:id',UsuarioControl.ModificarDatos);
-
+api.put('/fotoUsuario/:id', subirArchivo, UsuarioControl.subirFoto);
+api.get('/mostrarFoto/:imageFile', UsuarioControl.mostrarArchivo);
+api.post('/buscarUsuario', UsuarioControl.buscarUsuario);
 module.exports = api;

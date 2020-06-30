@@ -23,6 +23,4 @@ comida(){
   window.location.reload();
 }
 
-
-
 }

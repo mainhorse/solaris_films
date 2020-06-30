@@ -10,7 +10,7 @@ var UsuarioSchema = new Schema({
     compras : Array,
     direccion : String,
     celular : Number,
-    subscripcion : Date,    
+    suscripcion : Date,    
     estado : Boolean
 });
 
