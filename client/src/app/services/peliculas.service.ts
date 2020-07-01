@@ -72,6 +72,15 @@ url = 'http://localhost:3000/api/';
 
   }
 
+  buscarTodasPeliculas(){
+    let option = {
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
+    }
+    return this._http.post(
+      this.url + 'todasPeliculas',
+      option
+    ).pipe(map(res => res))
+  }
   eliminarPelicula(peliculaId){
     return this._http.delete(
       this.url + 'eliminarPelicula/' + peliculaId

@@ -194,6 +194,23 @@ function buscarPeliculas(req, res){
    
 }
 
+function buscarTodasPeliculas(req, res){
+    Pelicula.find((err, todasPeliculas)=>{
+        if(err){
+            res.status(500).send({message : "Error en el servidor"});
+        } else {
+            if(!todasPeliculas){
+                res.status(200).send({message : "no se encontraron peliculas"})
+            } else{
+                res.status(200).send({
+                    message : "todas las peliculas",
+                    peliculas : todasPeliculas
+                })
+            }
+        }
+    })
+}
+
 function eliminarPelicula(req,res){
     let id = req.params.id;
     Pelicula.findByIdAndDelete(id,(err, peliculaEliminada)=>{
@@ -224,5 +241,6 @@ module.exports = {
     mostrarArchivo,
     buscarPelicula,
     buscarPeliculas, 
-    eliminarPelicula
+    eliminarPelicula,
+    buscarTodasPeliculas
 }
