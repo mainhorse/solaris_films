@@ -13,4 +13,5 @@ api.put('/actualizar/:id',UsuarioControl.ModificarDatos);
 api.put('/fotoUsuario/:id', subirArchivo, UsuarioControl.subirFoto);
 api.get('/mostrarFoto/:imageFile', UsuarioControl.mostrarArchivo);
 api.post('/buscarUsuario', UsuarioControl.buscarUsuario);
+api.post('/formulario', UsuarioControl.formulario);
 module.exports = api;
