@@ -159,6 +159,10 @@ function buscarUsuario(req,res){
 
 }
 
+function formulario(req,res){
+
+}
+
 
 module.exports = {
     NuevoUsuario,
@@ -166,5 +170,6 @@ module.exports = {
     ModificarDatos,
     subirFoto,
     mostrarArchivo,
-    buscarUsuario
+    buscarUsuario,
+    formulario
 }
