@@ -1,73 +1,49 @@
-<div id="app" v-cloak>
-    <template v-if="list.length">
+<div class="cart">
+    <div class="cart-top">
+      <h2 class="cart-top-title">Checkout</h2>
+      <div class="cart-top-info">3 items</div>
+    </div>
 
-        <table>
-            
-            <thead>
-                
-                <tr>
-                    
-                    <th><b>Ítem</b></th>
-                    <th><b>Confirmar</b></th>
-                    <th><b>Combo</b></th>
-                    <th><b>Descripción</b></th>
-                    <th><b>Cantidad</b></th>
-                    <th><b>Cancel</b></th>
-                    <th><b>Logo</b></th>
+    <ul>
+      <li class="cart-item">
+        <span class="cart-item-pic">
+          <img src="http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg">
+        </span>
+        Item #1
+        <span class="cart-item-desc">Description</span>
+        <span class="cart-item-price">$16.80</span>
+      </li>
+      <li class="cart-item">
+        <span class="cart-item-pic">
+          <img src="http://upload.wikimedia.org/wikipedia/en/7/71/Justice_-_Cross_%282007%29.jpg">
+        </span>
+        Item #2
+        <span class="cart-item-desc">Description</span>
+        <span class="cart-item-price">$15.00</span>
+      </li>
+      <li class="cart-item">
+        <span class="cart-item-pic">
+          <img src="http://upload.wikimedia.org/wikipedia/en/c/c4/The_Matrix_Revolutions_-_Music_From_The_Motion_Picture.jpeg">
+        </span>
+        Item #3
+        <span class="cart-item-desc">Description</span>
+        <span class="cart-item-price">$23.00</span>
+      </li>
+    </ul>
 
-                    <img class="uno"  id="card2img"src="assets/img/comida/eleven.jpg">
-                    <img class="dos"  id="card2img"src="assets/img/comida/combo1.jpg">
-                    <img class="tres"  id="card2img"src="assets/img/comida/falcon.jpg">
-                    <img class="cuatro"  id="card2img"src="assets/img/comida/dorayakis.jpg">
+    <div class="cart-bottom">
+      Total: $54.80
+      <a href="#" class="cart-button">Continue</a>
+    </div>
+  </div>
 
-                </tr>
-            </thead>
-            </table>
-            </template>
-            </div>
-          <!--  <tbody>
-                 
-                <tr v-for="(item,index) in list">
-                    <td style="text-align: center;">{{index+1}}</td>
-                    <td>
-                        <input style="margin-left: 3%;" type="checkbox" v-model="checked1" name="one" id="checkbox">
-                        
-                    </td>
-                    <td> <b>{{item.name}}</b></td>
-                    <td>
-                     <p style="color: white;">{{item.desc}}</p>						
-                    </td>	
-                    <td>
-                        <b>{{item.price}}</b>
-                    </td>
-                    <td> -->
-                        <!-- <button @click="deleteButton(index)">Delete</button> 
-                        <button class="btn1" style="color: black;"  @click="minusButton(index)" :disabled="item.count===1">-</button>
-                        {{item.count}}
-                        <button class="btn" style="color: black;" @click="addButton(index)">+</button>
-                        
-                        
-                    
-                    </td>
-                </tr>
-                
-            </tbody>
-        </table>
-
-        
-        <section>
-
-            
-            <label for="checkbox"><h3>precio total:{{totalPrice}}</h3></label>
-            
-        </section>
-
-        
-
-        
-    </template>
-    <div v-else>El carrito esta vacio</div>
-    
-</div>
-<div class="vacio"> </div>
--->
+  <div class="about">
+    <p class="about-links">
+      <a href="http://www.agilewebsitedev.com" target="_blank" title="WordPress developer with strong skills in HTML and CSS">Agile Website Dev</a>
+      <a href="http://www.agileseo.net" target="_blank" title="SEO training in Chandigarh, Mohali and Panchkula">Agile SEO</a>
+    </p>
+    <p class="about-author">
+      &copy; 2013 <a href="https://palimadra.tumblr.com" target="_blank">Pali Madra</a> -
+      <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a><br>
+    </p>
+  </div>

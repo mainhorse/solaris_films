@@ -62,4 +62,20 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     window.location.reload();
   }
+
+  home(){
+    localStorage.setItem("pagina","home");
+    window.location.reload();
+  }
+  
+  comida(){
+    localStorage.setItem("pagina","comida");
+    window.location.reload();
+  }
+
+  contacto(){
+    localStorage.setItem("pagina","nosotros");
+    window.location.reload()
+  }
+
 }
