@@ -78,14 +78,17 @@ function ModificarDatos(req,res){
                 if(!usuarioActualizado){
                     res.status(200).send({message : "no se pudo actualizar tus datos"});
                 } else {
-                   res.status(200).send({
-                       message : "Datos Actualizados",
-                       usuario : usuarioActualizado
-                   })
+                    Usuario.findById(idUsuario,(err, actualizacion)=>{
+                        res.status(200).send({
+                            message : "Datos actualizados",
+                            usuario : actualizacion
+                        })
+                    })
                    
                 }
             }
         })
+       
   
 }
 
@@ -138,13 +141,14 @@ function mostrarArchivo(req, res) {
 
 function buscarUsuario(req,res){
     correoUsuario = req.body.correo;
-    Usuario.find({correo : correoUsuario},(err, buscarUsuario)=>{
+    console.log(correoUsuario);
+    Usuario.findOne({correo : correoUsuario},(err, buscarUsuario)=>{
         if(err){
             res.status(500).send({message : "Error en el servidor"})
         } else {
             if(!buscarUsuario){
                 res.status(200).send({message : "no tenemos registrado a ningun usuario con ese correo"})
-            } else{
+            } else if(buscarUsuario){
                 res.status(200).send({
                     message : "se encontro un usuario con ese correo",
                     usuario  : buscarUsuario

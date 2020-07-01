@@ -1,0 +1,58 @@
+<header class="he1">           
+    <div class="container red topBotomBordersOut">
+      <a class="uno" routerLink="/">PERFIL</a>
+      <a class="uno" routerLink="/sala">PELICULA</a>
+      <a class="uno"routerLink="/usuario">USUARIO</a>
+      <a class="uno">CONFITERIA</a>
+      <a class="uno">CONTACTENOS</a>
+      <a (click)="cerrar()" class="uno">Cerrar Sesion</a>
+    </div>
+  </header>
+  <img class="logo3" src="assets/img/logo.png"  alt="">
+  <div class="leftMenu">
+    <div class="hamburger active">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="leftMenuList">
+  
+    <li>
+      <a href="#" class="dropdown">
+        <i class="fa fa-home"></i>
+        <span id="nombre">{{usuario.nombre + ' ' +usuario.apellido }}</span>
+      </a>
+      <header>
+          <img src="{{ this.url + 'mostrarFoto/' + usuario.imagen }}" alt="imagen de usuario" id="fotoUsu">
+      </header>
+    </li>
+    <li>
+      <a class="dropdown">
+        <i class="fa fa-table"></i>
+        <span>INFORMACION</span>
+        <form #formularioPersonal="ngForm">
+          <input type="text" class="inpUsuario" placeholder="nombre" name="nombre"
+          #nombre="ngModel" [(ngModel)]= "usuario.nombre">
+          <input type="text" class="inpUsuario" placeholder="apellido" name="apellido"
+          #apellido="ngModel" [(ngModel)]="usuario.apellido">
+          <input type="text" class="inpUsuario" placeholder="correo" name="correo"
+          #correo="ngModel" [(ngModel)]="usuario.correo">
+          <input type="password" class="inpUsuario" placeholder="contraseña" name="contrasena"
+          #contrasena="ngModel" [(ngModel)]="usuario.contrasena">
+          <input type="text" class="inpUsuario" placeholder="Afiliación" name="rol"
+          #rol="ngModel" [(ngModel)]="usuario.rol">
+          <input type="text" class="inpUsuario" placeholder="direccion" name="direccion"
+          #direccion="ngModel" [(ngModel)]="usuario.direccion">
+          <input type="text" class="inpUsuario" placeholder="celular" name="celular"
+          #celular="ngModel" [(ngModel)]="usuario.celular">
+          <input type="file" class="inpUsuario" (change)="subirArchivo($event)">
+          <button type="submit" class="inpUsuario" (click)="actualizarDatos()">Actualizar</button>
+        </form>
+      </a>
+    </li>  
+  
+      <img class="logo4" src="../../../assets/img/logoDos.png"  alt="logo empresa">
+  
+  
+  
+  

@@ -5,7 +5,8 @@ import { NgModule } from '@angular/core';
 import { RegistroComponent } from './components/registro/registro.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { ComidaComponent } from './components/comida/comida.component';
-import{ SalaComponent } from './components/sala/sala.component'
+import{ SalaComponent } from './components/sala/sala.component';
+import{ UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.component'
 import { ChatComponent } from './components/chat/chat.component';
 
 const routes : Routes = [
@@ -15,7 +16,8 @@ const routes : Routes = [
     {path : 'registro', component : RegistroComponent},
     {path : 'ingreso' , component : IngresoComponent},
     {path: 'chat', component : ChatComponent},
-    {path:'sala', component : SalaComponent}
+    {path:'sala', component : SalaComponent},
+    {path: 'usuario', component : UsuarioAdmComponent}
 ];
 
 @NgModule({
