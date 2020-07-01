@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
         }
       });
       if(!this.archivoSubir){
-        alert("no subiste una imagen");
+        alert("No has subido una imagen");
       } else{
         this.usuarioService.cargarImagenUsuario(this.archivoSubir, this.usuario._id).subscribe(
           (response : any)=>{
