@@ -34,8 +34,8 @@ table {
   color: #bbb;
   text-align: center;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
-  background: #383838;
-  background: rgba(34, 34, 34, 0.8);
+  background: #330867;
+  background: #330867);
   border-radius: 4px;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
@@ -55,7 +55,7 @@ table {
 }
 .about a:hover {
   text-decoration: none;
-  background: #555;
+  background: #330867;
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -77,17 +77,11 @@ table {
   margin: 0 -1px;
 }
 
-/*
-* Author: Pali madra
- * URI: http://www.agilewebsitedev.com
-                   and
-         http://www.agileseo.net
- * Licensed under the MIT License:
- * https://www.opensource.org/licenses/mit-license.php
+
  */
 body {
-  font: 13px/20px 'Lucida Grande', Verdana, sans-serif;
-  color: #404040;
+  font: 13px/20px 'space';
+  color: #330867;
   background: #eee;
 }
 
@@ -97,7 +91,7 @@ body {
   overflow: hidden;
   color: white;
   text-shadow: 0 1px rgba(0, 0, 0, 0.6);
-  background: #525252;
+  background: white;
   border: 1px solid #202020;
   border-radius: 3px;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -114,24 +108,21 @@ body {
   font-weight: bold;
   color: #eee;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
-  background: #404040;
+  background: #330867;
   border-bottom: 1px solid #222;
   border-radius: 2px 2px 0 0;
   -webkit-font-smoothing: antialiased;
-  background-image: -webkit-linear-gradient(top, #525252, #3d3d3d 80%, #383838);
-  background-image: -moz-linear-gradient(top, #525252, #3d3d3d 80%, #383838);
-  background-image: -o-linear-gradient(top, #525252, #3d3d3d 80%, #383838);
-  background-image: linear-gradient(to bottom, #525252, #3d3d3d 80%, #383838);
+  background-image: -webkit-linear-gradient(top, white 80%, #330867);
+  background-image: -moz-linear-gradient(top,white, #330867);
+  background-image: linear-gradient(to bottom,white 80%, #330867);
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-.cart-top-title {
-  float: left;
-}
 
 .cart-top-info {
-  float: right;
+  float: left;
+  color: #330867;
 }
 
 .cart-item {
@@ -139,12 +130,12 @@ body {
   line-height: 20px;
   padding: 10px 80px 10px 15px;
   font-weight: bold;
-  background: #525252;
+  background: ;
   border-bottom: 1px solid #222;
-  background-image: -webkit-linear-gradient(top, #575757, #4e4e4e);
-  background-image: -moz-linear-gradient(top, #575757, #4e4e4e);
-  background-image: -o-linear-gradient(top, #575757, #4e4e4e);
-  background-image: linear-gradient(to bottom, #575757, #4e4e4e);
+  background-image: -webkit-linear-gradient(top,black, #330867);
+  background-image: -moz-linear-gradient(top,black,  #330867);
+  background-image: -o-linear-gradient(top, black,  #330867);
+  background-image: linear-gradient(to bottom,black,  #330867);
   -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
@@ -201,10 +192,7 @@ body {
   padding: 10px 10px 10px 15px;
   font-weight: bold;
   background: #484848;
-  background-image: -webkit-linear-gradient(top, #545454, #434343);
-  background-image: -moz-linear-gradient(top, #545454, #434343);
-  background-image: -o-linear-gradient(top, #545454, #434343);
-  background-image: linear-gradient(to bottom, #545454, #434343);
+  background-image: linear-gradient(to bottom,black, #330867);
   -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
@@ -215,10 +203,10 @@ body {
 .cart-button {
   line-height: 29px;
   padding: 0 25px;
-  color: white;
+  color: #330867;
   text-decoration: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  background: #5aa327 padding-box;
+  background: snow padding-box;
   border: 1px solid #333;
   border-radius: 4px;
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1) 50%, transparent 50%, rgba(0, 0, 0, 0.04));
