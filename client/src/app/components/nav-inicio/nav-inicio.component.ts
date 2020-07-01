@@ -42,6 +42,11 @@ export class NavInicioComponent implements OnInit {
     window.location.reload();
   }
 
+  contacto(){
+    localStorage.setItem("pagina","nosotros");
+    window.location.reload()
+  }
+
   registrarUsuario(){
     this.usuarioServicio.Registro(this.usuarioRegistro).subscribe(
         (response : any)=>{
