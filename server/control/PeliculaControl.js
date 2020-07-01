@@ -31,7 +31,7 @@ function peliculaNueva(req,res){
             res.status(200).send({message : "Los datos son incorrectos, porfavor vuelva a intentar"}); 
         } else {
             res.status(200).send({
-                message : "Pelicula nueva, guarda en la base de datos",
+                message : "Película nueva, guarda en la base de datos",
                 pelicula : nuevaPelicula
             });
         }
@@ -48,10 +48,10 @@ function actualizarPelicula(req,res){
             res.status(500).send({message : 'Error en el servidor'});
         } else{
             if(!encontrarPelicula){
-                res.status(200).send({message : 'No se pudo actualizar la pelicula'});
+                res.status(200).send({message : 'No se pudo actualizar la película'});
             } else {
                 res.status(200).send({
-                    message : "La pelicula ha sido actualizada",
+                    message : "La película ha sido actualizada",
                     pelicula : encontrarPelicula
                 })
             }
@@ -63,7 +63,7 @@ function actualizarPelicula(req,res){
 function subirArchivo(req,res){
     var idPelicula = req.params.id;
     var campo = req.body.tipo;
-    var nombreArchivo = "no has subido un archivo";
+    var nombreArchivo = "No has subido un archivo";
 
     if(req.files){
         var rutaArchivo = req.files.archivos.path;    
@@ -78,10 +78,10 @@ function subirArchivo(req,res){
                         res.status(500).send({message : 'Error en el servidor'});
                     }else {
                         if(!caratulaNueva){
-                            res.status(200).send({message : 'No se pudo cargar la caratula'});
+                            res.status(200).send({message : 'No se pudo cargar la cartelera'});
                         } else {
                             res.status(200).send({
-                                message : 'ya tienes una cartelera',
+                                message : 'Ya tienes una cartelera',
                                 pelicula : caratulaNueva
                             })
                         }
@@ -95,10 +95,10 @@ function subirArchivo(req,res){
                         res.status(500).send({message : 'Error en el servidor'});
                     } else {
                         if(!trailer){
-                            res.status(200).send({message : 'No se pudo cargar el trailer'});
+                            res.status(200).send({message : 'No se pudo cargar el tráiler'});
                         } else{
                             res.status(200).send({
-                                message : 'Se guardo el trailer',
+                                message : 'Se guardó el tráiler',
                                 pelicula : trailer
                             })
                         }
@@ -112,10 +112,10 @@ function subirArchivo(req,res){
                     res.status(500).send({message : 'Error en el servidor'});
                 } else {
                     if(!pelicula){
-                        res.status(200).send({message : 'No se pudo cargar el trailer'});
+                        res.status(200).send({message : 'No se pudo cargar el tráiler'});
                     } else{
                         res.status(200).send({
-                            message : 'Se guardo la pelicula',
+                            message : 'Se guardó la película',
                             pelicula : pelicula
                         })
                     }
@@ -124,7 +124,7 @@ function subirArchivo(req,res){
         }
 
         } else{
-            res.status(200).send({message : 'no se encontraon concidencias en el documento'});
+            res.status(200).send({message : 'No se encontraron concidencias en el documento'});
         }
 
     }
@@ -142,7 +142,7 @@ function buscarPelicula(req,res){
         if(exist){
             res.sendFile(path.resolve(ruta));
         } else{
-            res.status(200).send({message: "Pelicula no encontrada"});
+            res.status(200).send({message: "Película no encontrada"});
         }
     })
 }
@@ -161,7 +161,7 @@ function mostrarArchivo(req, res){
         if(exist){
             res.sendFile(path.resolve(ruta));
         } else{
-            res.status(200).send({message: "Caratula no encontrada"});
+            res.status(200).send({message: "Cartelera no encontrada"});
         }
     })
 }
@@ -169,7 +169,6 @@ function mostrarArchivo(req, res){
 function buscarPeliculas(req, res){
     let parametros = req.body;
     let busquedaPelicula = parametros.busqueda.toLowerCase();
-    console.log(`este es el valor de la busqueda: ${busquedaPelicula}`);
     if(busquedaPelicula != undefined || busquedaPelicula != null){
         Pelicula.findOne({ titulo : { $regex: '.*' + busquedaPelicula + '.*'}}, (err, peliculaEncontrada)=>{
             if(err){
@@ -179,10 +178,10 @@ function buscarPeliculas(req, res){
                     res.status(200).send({message : "No se encontraron concidencias"});
                 } else{
                     if(peliculaEncontrada.length == 0){
-                        res.status(200).send({message : 'no se encontraron resultados'})
+                        res.status(200).send({message : 'No se encontraron resultados'})
                     } else if(peliculaEncontrada.length != 0){
                         res.status(200).send({
-                            message : "Se encontro una pelicula",
+                            message : "Se encontró una película",
                             pelicula : peliculaEncontrada
                         
                     });
@@ -218,10 +217,10 @@ function eliminarPelicula(req,res){
             res.status(500).send({ message : 'Error en el servidor'});
         }else {
             if(!peliculaEliminada){
-                res.status(200).send({message: "No se pudo eliminar la pelicula"});
+                res.status(200).send({message: "No se pudo eliminar la película"});
             } else{
                 res.status(200).send({
-                    message : 'Pelicula eliminada',
+                    message : 'Película eliminada',
                     pelicula : peliculaEliminada
                 })
             }

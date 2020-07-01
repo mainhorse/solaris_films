@@ -1,0 +1,91 @@
+
+table{
+	border: 1px solid ;
+	border-collapse: collapse;
+	border-spacing: 0;	
+	empty-cells: show;
+	background-color: snow;
+}
+th,td{
+	padding: 8px 16px;
+	border: 1px solid transparent;
+	text-align: left;
+	
+}
+
+th{
+	background: black;
+	color: #8d9b59;
+	font-weight: 600;
+	/*white-space: nowrap;*/
+	text-align: center;
+}
+
+tr{
+	background-image: radial-gradient(#039dc7, #3d33a8);
+}
+
+.uno{
+	width: 70px;
+	height: 40px;
+	position: absolute;margin-left: 83.6%;
+	margin-top: 3%;
+}
+
+.dos{
+	width: 70px;
+	height: 40px;
+	position: absolute;
+	position: absolute;margin-left: 83.6%;
+	margin-top: 9%;
+}
+
+.tres{
+	width: 70px;
+	height: 40px;
+	position: absolute;
+	position: absolute;margin-left: 83.6%;
+	margin-top: 14%;
+}
+
+.cuatro{
+	width: 70px;
+	height: 40px;
+	position: absolute;
+	position: absolute;margin-left: 83.6%;
+	margin-top: 19%;
+}
+
+section{
+	position: absolute;
+	margin-top: 2%;
+	background-image: radial-gradient(#039dc7, #3d33a8);
+	padding: 5% 8% 5% 8% ;
+	margin-left: 30%;
+	box-shadow: 4px 6px 5px 6px gray;
+	margin-bottom: 10px;
+	border-radius: 10px;
+
+}
+
+.btn{
+	background-color: snow;
+	padding: 3px 18px 3px 18px;
+	border-radius: 4px;
+}
+
+.btn1{
+	background-color: snow;
+	padding: 3px 18px 3px 18px;
+	border-radius: 4px;
+}
+
+#app{
+	margin-left: 4%;
+}
+
+.vacio{
+	width: 10%;
+	height: 10%;
+	margin-top: 20%;
+}

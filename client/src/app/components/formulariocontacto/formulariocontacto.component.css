@@ -1,0 +1,74 @@
+
+@font-face {
+    font-family: "Space";
+    src: url("/assets/space_age.ttf");
+  }
+
+.partefooter{
+    padding: 50px;
+    display: inline block;
+    font-family: space;
+    background-image: linear-gradient(to bottom, #30cfd0 0%, #161d27 100%);
+    color: #11366D;
+    }
+    form{
+    margin-left: 150px;
+    width: 374px;
+    height:  449px;
+    background: #11366D;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    justify-content: center;
+    }
+    form h1{
+      color: snow;
+      font-family: space;
+      
+    }
+    input, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    font-family: space;
+    }
+    
+    textarea{
+    min-height: 100px;
+    max-height: 2000px;
+    max-width: 100%;
+    }
+    #boton{
+    background: white;
+    color: #11366D;
+    padding: 20px;
+    }
+    #boton:hover{
+    cursor: pointer;
+    background-color:#62C2E4;
+    color: white;
+    }
+    h2{
+    text-align: center;
+    color: white;
+    font-family: space;
+    }
+    .contenidof{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-family: space;
+    
+    }
+    iframe{
+    
+    margin-top: 20px;
+    width: 150px;
+    height: 250px;
+    }
+ 

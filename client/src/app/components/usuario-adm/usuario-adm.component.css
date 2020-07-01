@@ -15,6 +15,7 @@
     margin-top: 1%;
     margin-left: 5%;
     float: left;
+    overflow: auto;
 }
 
 input{
@@ -34,17 +35,7 @@ input{
     margin-top: 1%;
     margin-left: 5%;
     float: left;
-}
-
-button{
-    width: 40%;
-    height: 10%;
-    margin-top: 1%;
-    margin-left: 30%;
-    margin-right: 30%;
-    padding: 1%;
-    border-radius: 5px;
-    float: left;
+    overflow: auto;
 }
 
 #foto{
@@ -66,4 +57,39 @@ button{
     margin-right: 20%;
     border-radius: 10px;
     float: left;
+}
+
+.datos{
+    width: 80%;
+    height: 10%;
+    margin-top: 1.8%;
+    margin-left: 8%;
+    padding: 1%;
+    overflow: auto;
+    float: left;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+}
+
+#actualizar, #buscar{  
+    width: 30%;
+    height: 15%;
+    margin-top: 5%;
+    margin-left: 30%;
+    padding: 1%;
+    text-align: center;
+    background: red;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-bottom: 5%;
 }
