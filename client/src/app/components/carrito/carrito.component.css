@@ -162,7 +162,7 @@ body {
   bottom: -1px;
   left: -1px;
   right: -1px;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 4px;
   background-image: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0.15) 50%, transparent 50%);
   background-image: -moz-linear-gradient(top left, rgba(255, 255, 255, 0.15) 50%, transparent 50%);
