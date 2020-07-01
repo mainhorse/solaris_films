@@ -33,7 +33,7 @@ nuevaPelicula(){
        } else{
          localStorage.setItem('pelicula',JSON.stringify(resultado));
          this.pelicula = JSON.parse(localStorage.getItem('pelicula'));
-         alert('pelicula guardada');
+         alert('Película guardada');
          
        }
       },error =>{

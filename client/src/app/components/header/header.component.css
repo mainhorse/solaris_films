@@ -8,7 +8,7 @@ h1{
 	background-color:  #161d27 ;
 	position: absolute;
 	left	: 0;
-  top:0;
+    top:0;
 	width	: 50px;
 	overflow: hidden;
   transition: .5s cubic-bezier(.8, .5, .2, 1.4);
