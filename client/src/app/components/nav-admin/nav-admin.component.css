@@ -317,6 +317,7 @@ h1{
     transition: 0.5s linear;
     font-size: 20px;
     margin-left: 30px;
+    cursor: pointer;
     
   }
   .red a:hover {
@@ -332,12 +333,50 @@ h1{
         margin-left: 39%;
     }
   
-    .inpUsuario{
+     .datos{
         width : 80%;
         height : 20%;
+        margin-top: 1.8%;
         margin-left: 7%;
         padding: 2%;
-        border-radius: 5px;	
+        overflow: auto;
+        float: left;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        border-bottom: 1px solid black;
+        background: transparent;
+        outline: none;
+        height: 30px;
+        color: white;
+        font-size: 16px;
     }
-  
-  
+    
+    #actualizar{  
+        width: 40%;
+        height: 20%;
+        margin-top: 5%;
+        margin-left: 30%;
+        padding: 1%;
+        text-align: center;
+        background: red;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 20px;
+        margin-bottom: 5%;
+       
+    }
+
+    input[type="file"]#files {
+        
+        width: 50%;
+        height: 20%;
+        margin-top: 5%;
+        margin-left: 25%;
+        padding: 1%;
+        text-align: center;
+        }
+
+ 

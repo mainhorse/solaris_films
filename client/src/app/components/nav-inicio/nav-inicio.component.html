@@ -1,12 +1,61 @@
-<header class="he1">     
-      
+<header class="he1">
+
     <div class="container red topBotomBordersOut">
-            <a (click)="home()">HOME</a>
-            <a (click)="comida()">CONFITERIA</a>
-            <a routerLink = "/chat">CONTACTENOS</a>    
-            <a routerLink="/ingreso" class="btn1">INICIAR SESION</a>
-            <a routerLink="/registro" class="btn2">¡REGISTRARTE!</a>
+        <a (click)="home()">HOME</a>
+        <a (click)="comida()">CONFITERIA</a>
+        <a>CONTACTENOS</a>
+
+        <input type="radio" name="modalUno" id="abrirModalUno">
+        <label for="abrirModalUno" class="btn1">Iniciar Sesión</label>
+        <input type="radio" name="modalUno" id="cerrarModalUno">
+        <label for="cerrarModalUno">X</label>
+        <div id="modalUno">
+            <h1>Inicia Sesión!</h1>
+            <div id="inicio" class="formulario">
+                <form #formularioIngreso="ngForm" (ngSubmit)="ingresoUsuario()">
+                    <input class="datosDos" type="text" required placeholder="Correo" name="correo" #correo="ngModel"
+                        [(ngModel)]="usuarioIngreso.correo" />
+                    <br>
+                    <input class="datosDos" type="password" required placeholder="Contraseña" name="contrasena" #contrasena="ngModel"
+                        [(ngModel)]="usuarioIngreso.contrasena">
+                    <br>
+                    <button type="submit">Ingreso</button>
+                    <a id="reCuenta">¿Olvidaste tu cuenta?</a>
+                </form>
+
+            </div>
+        </div>
+        <!-- Tercero -->
+
+        <input type="radio" name="modalDos" id="abrirModalDos">
+        <label for="abrirModalDos" class="btn1">Registro</label>
+        <input type="radio" name="modalDos" id="cerrarModalDos">
+        <label for="cerrarModalDos">X</label>
+        <div id="modalDos">
+            <h1>Registrate!</h1>
+            <div id="registro" class="formulario">
+                <form #formularioRegistro="ngForm" (ngSubmit)="registrarUsuario()">
+                    <input class="datosDos" type="text" required placeholder="Nombre" name="nombre" #nombre="ngModel"
+                        [(ngModel)]="usuarioRegistro.nombre" />
+                    <br>
+                    <input class="datosDos" type="text" required placeholder="Apellido" name="apellido" #apellido="ngModel"
+                        [(ngModel)]="usuarioRegistro.apellido">
+                    <br>
+                    <input class="datosDos" type="text" required placeholder="Correo" name="correo" #correo="ngModel"
+                        [(ngModel)]="usuarioRegistro.correo" />
+                    <br>
+                    <input class="datosDos" type="password" required placeholder="Contraseña" name="contrasena" #contrasena="ngModel"
+                        [(ngModel)]="usuarioRegistro.contrasena">
+                    <br>
+                  
+                    <button type="submit">Registrate</button>
+                </form>
+            </div>
+
+        </div>
+
     </div>
 </header>
-<img class="logo3" src="assets/img/logo.png"  alt="">
+
+<img class="logo3" src="assets/img/logo.png" alt="">
 
