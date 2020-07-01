@@ -22,17 +22,17 @@ function NuevoUsuario(req,res){
                     res.status(500).send({message : "Error en el servidor"});
                 } else {
                     if(usuarioNuevo){
-                        res.status(200).send({message : "Datos invalidos"});
+                        res.status(200).send({message : "Datos inválidos"});
                     } else if(!usuarioNuevo){
                         usuario.save((err, registro)=>{
                             if(err){
                                 res.status(500).send({message : "Error en el servidor"});
                             } else{
                                 if(!registro){
-                                    res.status(200).send({message : "Datos invalidos"});
+                                    res.status(200).send({message : "Datos inválidos"});
                                 } else{
                                     res.status(200).send({
-                                        message : "registro exitoso",
+                                        message : "Registro exitoso",
                                         usuario : registro
                                     });
                                 }
@@ -43,7 +43,7 @@ function NuevoUsuario(req,res){
             },)
     } 
     else {
-        res.status(200).send({message : "hubo un error en tu ingreso, vuelve a intentar"});
+        res.status(200).send({message : "Hubo un error en tu ingreso, vuelve a intentar"});
     }
 }
 
@@ -57,7 +57,7 @@ function Ingresar(req,res){
             res.status(500).send({message : "Error del servidor"});
         } else{
             if(!buscarUsuario){
-                res.status(200).send({message: "No estas registrado"});
+                res.status(200).send({message: "No estás registrado"});
             } else{
                 res.status(200).send({
                     message : "Ingreso",
@@ -76,7 +76,7 @@ function ModificarDatos(req,res){
                 res.status(500).send({message : "Error en el servidor"});
             } else {
                 if(!usuarioActualizado){
-                    res.status(200).send({message : "no se pudo actualizar tus datos"});
+                    res.status(200).send({message : "No se pudo actualizar tus datos"});
                 } else {
                     Usuario.findById(idUsuario,(err, actualizacion)=>{
                         res.status(200).send({
@@ -106,7 +106,7 @@ function subirFoto(req,res){
                     res.status(200).send({message : "Error en el servidor"})
                 } else{
                     if(!fotoActualizada){
-                        res.status(200).send({message : "no se pudo actualizar la foto de perfil"})
+                        res.status(200).send({message : "No se pudo actualizar la foto de perfil"})
                     }else{
                         res.status(200).send({
                             message: "Foto actualizada",
@@ -117,7 +117,7 @@ function subirFoto(req,res){
             })
         }
     } else {
-        res.status(200).send({message : "no subiste una foto de perfil"});
+        res.status(200).send({message : "No subiste una foto de perfil"});
     }
 }
 
@@ -134,7 +134,7 @@ function mostrarArchivo(req, res) {
         if (exist) {
             res.sendFile(path.resolve(ruta));
         } else {
-            res.status(200).send({ message: "imagen no encontrada" });
+            res.status(200).send({ message: "Imagen no encontrada" });
         }
     })
 }
@@ -147,10 +147,10 @@ function buscarUsuario(req,res){
             res.status(500).send({message : "Error en el servidor"})
         } else {
             if(!buscarUsuario){
-                res.status(200).send({message : "no tenemos registrado a ningun usuario con ese correo"})
+                res.status(200).send({message : "No tenemos registrado a ningún usuario con ese correo"})
             } else if(buscarUsuario){
                 res.status(200).send({
-                    message : "se encontro un usuario con ese correo",
+                    message : "Se encontró un usuario con ese correo",
                     usuario  : buscarUsuario
                 })
             }
