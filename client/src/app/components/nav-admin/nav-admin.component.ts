@@ -49,6 +49,8 @@ export class NavAdminComponent implements OnInit {
               alert(mensaje);
             } else{
               alert(mensaje);
+              this.usuario.imagen = respuesta.imagen;
+              
               let img = this.url + 'mostrarFoto/' + this.usuario.imagen;
               document.getElementById('fotoUsu').setAttribute('src', img);
             }

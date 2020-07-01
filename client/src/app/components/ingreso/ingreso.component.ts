@@ -38,7 +38,7 @@ export class IngresoComponent implements OnInit {
         if(!this.usuarioIngreso){
            alert(mensaje);
             this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
-        } else{
+        } else if(this.usuarioIngreso.estado){
                 let datosUsuario = new Usuario(
                     this.usuarioIngreso._id,
                     this.usuarioIngreso.imagen,
@@ -70,20 +70,21 @@ export class IngresoComponent implements OnInit {
                     if(correoUsu == "@solaris"){
                         alert("administrador")
                         localStorage.setItem('pagina','administrador'); 
-                        this._router[('/')]
-                       
+                        localStorage.setItem('usuarioEncontrado',JSON.stringify(this.usuarioIngreso));                       
                     } else {
                         alert("usuario")
                         localStorage.setItem('pagina','usuario'); 
                     }  
                     window.location.reload();    
                     
+        } else {
+            alert('Tu cuenta se encuentra bloquiada, por favor contactanos para mas informacion');
         }
     },
     error =>{
         var errorMensaje = <any>error;
         if(errorMensaje != null){
-            alert('Datos Incorrectos');
+          console.log(errorMensaje);  
         }
     }
     )
