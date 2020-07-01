@@ -53,7 +53,7 @@ import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
     RegistroComponent,
     IngresoComponent,
     HeaderComponent,
-    NavAdminComponent
+   NavAdminComponent
 
   ],
   imports: [
