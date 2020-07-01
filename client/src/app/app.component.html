@@ -1,10 +1,11 @@
-
 <div *ngIf='pagina == undefined'>
     <app-nav-inicio ></app-nav-inicio>  
-    <router-outlet></router-outlet>
     <app-slider></app-slider>
-    <app-cartelera></app-cartelera>
+    <app-cartelera></app-cartelera> 
+    <app-formulariocontacto></app-formulariocontacto>
+    <app-chat></app-chat>
     <app-footer></app-footer>
+    <app-empresa></app-empresa>
 </div>
 
 <div *ngIf='pagina == "usuario"' id="usuario">
