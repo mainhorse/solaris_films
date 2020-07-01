@@ -24,7 +24,7 @@
             <input type="file" class="datos" (change)="subirArchivo($event)">
             <input class="datos" type="text" placeholder="Tipo de documento" name="tipo" #tipo="ngModel"
                 [(ngModel)]="pelicula.tipo">
-            <button id="botonDocumento" class="btnP" type="submit" (click)="subirPelicula()">Archivo</button>
+            <button id="botonDocumento" class="btnP" type="submit" (click)="subirPelicula()">Subir Archivo</button>
             <button id="bEliminar" type="submit" (click)="eliminarPelicula()">Eliminar Película</button>
         </form>
         <form #formularioBusqueda='ngForm'>

@@ -35,7 +35,7 @@ export class UsuarioAdmComponent implements OnInit {
            celular: usuarioE.celular,suscripcion : usuarioE.suscripcion, estado : usuarioE.estado }
             
         }else{
-          alert("no se encontraron concidencias");           
+          alert("No se han encontrado concidencias");           
         }
       })
   }

@@ -106,7 +106,7 @@ export class NavInicioComponent implements OnInit {
                     let correo = this.usuarioIngreso.correo;
                     let correoUsu = correo.substr(this.inicio,8);
                     if(correoUsu == "@solaris"){
-                        alert("administrador")
+                        alert("Bienvenido administrador")
                         localStorage.setItem('pagina','administrador'); 
                         localStorage.setItem('usuarioEncontrado',JSON.stringify(this.usuarioIngreso));                       
                     } else {
@@ -116,7 +116,7 @@ export class NavInicioComponent implements OnInit {
                     window.location.reload();    
                     
         } else {
-            alert('Tu cuenta se encuentra bloquiada, por favor contactanos para mas informacion');
+            alert('Tu cuenta se encuentra bloqueada, por favor contáctanos para más información');
         }
     },
     error =>{

@@ -28,7 +28,7 @@ public pelicula : Pelicula ;
   }
 
 reproducir(){
-let repVid = this.url + "pelicula/" + this.pelicula.linkPelicula;
+let repVid = this.url + "caratula/" + this.pelicula.linkPelicula;
 document.getElementById("video").setAttribute("src", repVid);
 
 }
