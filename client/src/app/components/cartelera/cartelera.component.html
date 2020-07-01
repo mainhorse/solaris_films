@@ -2,7 +2,7 @@
     <h1 class="t-space-h1">CARTELERA</h1>
     <div class="wrapper">
         
-        
+    <div *ngFor="let peliculas of peliculas"> 
         <div class="card">
             <input type="checkbox" id="card1" class="more" aria-hidden="true">
             <div class="content">
@@ -11,20 +11,20 @@
                         <label for="card1" class="button" aria-hidden="true">
                             Detalles
                         </label>
-                        <img src="./assets/img/peli1.jpg" />
+                        <img src="{{this.url + 'caratula/' + peliculas.cartelera}}" />
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
                         <div class="info">
-                            <span>6,3</span>
+                            <span>{{peliculas.puntuacion}}</span>
                             <div class="icon">
                                 <img src="./assets/img/clas.png" />
-                                <span>Puntuación</span>
+                                <span>Puntuacion</span>
                             </div>
                         </div>
                         <div class="info">
-                            <span>3D</span>
+                            <span>{{peliculas.calidad}}</span>
                             <div class="icon">
                                 <img src="./assets/img/2d.png" />
                                 <span>Calidad</span>
@@ -39,15 +39,10 @@
                         </div>
 
                         <div class="description">
-                            <p class="t-space-p">Terminator: Destino oscuro</p>
+                            <p class="t-space-p">{{peliculas.titulo}}</p>
                             <div class="location">Paramount Pictures (América del Norte)</div>
-                            <div class="price">Duración: 128 minutos </div>
-                            <p>Un nuevo tipo de Terminator llega desde el futuro
-                                a la Ciudad de México para asesinar a una joven
-                                . Sin embargo, también viaja al presente
-                                desde el futuro Grace, un híbrido entre cyborg
-                                y humano para proteger a todos del indestructible
-                                robot asesino.</p>
+                            <div class="price">{{peliculas.tiempo}}</div>
+                            <p>{{peliculas.sinopsis}}</p>
 
 
                         </div>
@@ -71,145 +66,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="card">
-            <input type="checkbox" id="card2" class="more" aria-hidden="true">
-            <div class="content">
-                <div class="front">
-                    <div class="inner">
-                        <label for="card2" class="button" aria-hidden="true">
-                            Detalles
-                        </label>
-                        <img src="./assets/img/peli1.jpg" />
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="inner">
-                        <div class="info">
-                            <span>6,3</span>
-                            <div class="icon">
-                                <img src="./assets/img/clas.png" />
-                                <span>Puntuación</span>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <span>3D</span>
-                            <div class="icon">
-                                <img src="./assets/img/2d.png" />
-                                <span>Calidad</span>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <span>128</span>
-                            <div class="icon">
-                                <img src="./assets/img/ver.jpg" />
-                                <span>Espectadores</span>
-                            </div>
-                        </div>
-
-                        <div class="description">
-                            <p class="t-space-p">Terminator: Destino oscuro</p>
-                            <div class="location">Paramount Pictures (América del Norte)</div>
-                            <div class="price">Duración: 128 minutos </div>
-                            <p>Un nuevo tipo de Terminator llega desde el futuro
-                                a la Ciudad de México para asesinar a una joven
-                                . Sin embargo, también viaja al presente
-                                desde el futuro Grace, un híbrido entre cyborg
-                                y humano para proteger a todos del indestructible
-                                robot asesino.</p>
-
-
-                        </div>
-                        <div class="info">
-
-                            <label for="card2" class="button return" aria-hidden="true">
-                                <img class="comeback" src="./assets/img/volver.png" />
-                            </label>
-
-                        </div>
-
-                        <span>
-                            <img class="img-trailer"src="./assets/img/trailer.png" />
-                        </span>
-
-
-                        <label class="imglabel" for="card2" class="button2 return" aria-hidden="true">
-                            Comprar
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="card3" class="more" aria-hidden="true">
-            <div class="content">
-                <div class="front">
-                    <div class="inner">
-                        <label for="card3" class="button" aria-hidden="true">
-                            Detalles
-                        </label>
-                        <img src="./assets/img/peli1.jpg" />
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="inner">
-                        <div class="info">
-                            <span>6,3</span>
-                            <div class="icon">
-                                <img src="./assets/img/clas.png" />
-                                <span>Puntuación</span>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <span>3D</span>
-                            <div class="icon">
-                                <img src="./assets/img/2d.png" />
-                                <span>Calidad</span>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <span>128</span>
-                            <div class="icon">
-                                <img src="./assets/img/ver.jpg" />
-                                <span>Espectadores</span>
-                            </div>
-                        </div>
-
-                        <div class="description">
-                            <p class="t-space-p">Terminator: Destino oscuro</p>
-                            <div class="location">Paramount Pictures (América del Norte)</div>
-                            <div class="price">Duración: 128 minutos </div>
-                            <p>Un nuevo tipo de Terminator llega desde el futuro
-                                a la Ciudad de México para asesinar a una joven
-                                . Sin embargo, también viaja al presente
-                                desde el futuro Grace, un híbrido entre cyborg
-                                y humano para proteger a todos del indestructible
-                                robot asesino.</p>
-
-
-                        </div>
-                        <div class="info">
-
-                            <label for="card3" class="button return" aria-hidden="true">
-                                <img class="comeback" src="./assets/img/volver.png" />
-                            </label>
-
-                        </div>
-
-                        <span>
-                            <img class="img-trailer"src="./assets/img/trailer.png" />
-                        </span>
-
-
-                        <label class="imglabel" for="card3" class="button2 return" aria-hidden="true">
-                            Comprar
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    </div>    
        
     </div>
 </div>
