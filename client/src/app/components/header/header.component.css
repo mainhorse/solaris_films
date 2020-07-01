@@ -4,7 +4,7 @@ h1{
   display:table;
 }
 .leftMenu{
-	height: 130%;
+	height: auto;
 	background-color:  #161d27 ;
 	position: absolute;
 	left	: 0;
@@ -13,6 +13,7 @@ h1{
 	overflow: hidden;
   transition: .5s cubic-bezier(.8, .5, .2, 1.4);
   filter: drop-shadow(5px 5px 10px #444); 
+  z-index: 150;
 }
 .hamburger{
 	width	: 40px;

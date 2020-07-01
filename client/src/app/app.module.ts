@@ -28,6 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
 import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
+import { FormulariocontactoComponent } from './components/formulariocontacto/formulariocontacto.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 
@@ -53,7 +55,9 @@ import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
     RegistroComponent,
     IngresoComponent,
     HeaderComponent,
-   NavAdminComponent
+   NavAdminComponent,
+   FormulariocontactoComponent,
+   CarritoComponent
 
   ],
   imports: [
