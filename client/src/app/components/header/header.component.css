@@ -4,7 +4,7 @@ h1{
   display:table;
 }
 .leftMenu{
-	height: auto;
+	height: 130%;
 	background-color:  #161d27 ;
 	position: absolute;
 	left	: 0;
@@ -13,7 +13,6 @@ h1{
 	overflow: hidden;
   transition: .5s cubic-bezier(.8, .5, .2, 1.4);
   filter: drop-shadow(5px 5px 10px #444); 
-  z-index: 150;
 }
 .hamburger{
 	width	: 40px;
@@ -252,7 +251,6 @@ html, body
 .he1
 {
     font-family: Raleway;
-
 	padding: 5em 3em;
     text-align: center;
     margin-top: 4.4% ;

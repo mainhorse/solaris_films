@@ -1257,7 +1257,7 @@ z-index: 9999;
 }
 .cta-container {
 display: none;
-
+cursor: pointer;
 position: relative;
 text-align: center;
 width: 100%;

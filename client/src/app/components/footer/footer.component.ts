@@ -12,5 +12,9 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  empresa() {
+    localStorage.setItem("pagina", "nosotros");
+    window.location.reload()
+  }
 }
