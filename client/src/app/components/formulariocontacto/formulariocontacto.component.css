@@ -1,0 +1,103 @@
+
+@font-face {
+    font-family: "Space";
+    src: url("/assets/space_age.ttf");
+  }
+
+.partefooter{
+    padding: 50px;
+    display: inline block;
+    font-family: space;
+    background-image: url("../../../assets/fondoadministrador2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #11366D;
+    }
+
+    form{
+    margin-left: 50px;
+    width: 374px;
+    height:  449px;
+    background: #11366D;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    justify-content: center;
+    }
+    
+    form h1{
+      color: snow;
+      font-family: space;
+      
+    }
+    input, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    textarea{
+    min-height: 100px;
+    max-height: 2000px;
+    max-width: 100%;
+    }
+
+    #boton{
+    background: white;
+    color: #11366D;
+    padding: 20px;
+    }
+
+    #boton:hover{
+    cursor: pointer;
+    background-color:#62C2E4;
+    color: white;
+    }
+    
+    h2{
+    text-align: center;
+    color: white;
+    font-family: space;
+    }
+
+    .contenidof{
+        display: flex;
+        flex-wrap: wrap;
+        font-family: space;
+        margin-left: 50px;
+    }
+
+    iframe{
+    margin-top: 20px;
+    width: 500px;
+    height: 500px;
+    }
+
+    #titulo{
+      font-size: 50px ;
+      color: snow;
+    }
+ 
+    h1{
+      text-align: center;
+    }
+
+    button{
+      width: 30%;
+      height: 15%;
+      margin-left: 30%;
+      padding: 1%;
+      text-align: center;
+      border: none;
+      outline: none;
+      color: rgba(40, 48, 155);
+      background-color: snow;
+      font-size: 18px;
+      border-radius: 20px;
+  }

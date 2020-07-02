@@ -95,10 +95,11 @@ export class HeaderComponent implements OnInit {
   }
 
   home() {
-    localStorage.setItem("pagina", "home");
+    localStorage.setItem("pagina", "usuario");
     window.location.reload();
   }
 
+  
   comida() {
     localStorage.setItem("pagina", "comida");
     window.location.reload();

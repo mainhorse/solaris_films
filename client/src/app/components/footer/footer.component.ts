@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   }
   
   empresa() {
-    localStorage.setItem("pagina", "nosotros");
+    localStorage.setItem("pagina", "empresa");
     window.location.reload()
   }
 }
