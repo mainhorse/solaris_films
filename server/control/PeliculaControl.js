@@ -7,7 +7,8 @@ function peliculaNueva(req,res){
   var parametros = req.body;
   var pelicula = new Pelicula();
   var titPelicula = parametros.titulo;
-
+  
+  pelicula.numPelicula = parametros.numPelicula;
   pelicula.titulo = titPelicula.toLowerCase();
   pelicula.director = parametros.director;
   pelicula.linkTrailer = parametros.linkTrailer;

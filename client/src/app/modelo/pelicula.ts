@@ -1,6 +1,7 @@
 export class Pelicula{
     constructor(
         public _id : String,
+        public numPelicula : Number,
         public titulo : String,
         public director : String,
         public linkTrailer : String,

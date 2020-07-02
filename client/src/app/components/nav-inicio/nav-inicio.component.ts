@@ -25,7 +25,7 @@ export class NavInicioComponent implements OnInit {
   ) {
     this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
     this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
-    this.pelicula = new Pelicula("","","","","","","","","",0,"","","","",true);
+    this.pelicula = new Pelicula("",0,"","","","","","","","",0,"","","","",true);
    }
 
   ngOnInit(): void {
@@ -35,16 +35,6 @@ export class NavInicioComponent implements OnInit {
   home(){
     localStorage.setItem("pagina","home");
     window.location.reload();
-  }
-  
-  comida(){
-    localStorage.setItem("pagina","comida");
-    window.location.reload();
-  }
-
-  contacto(){
-    localStorage.setItem("pagina","nosotros");
-    window.location.reload()
   }
 
   registrarUsuario(){

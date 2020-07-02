@@ -23,7 +23,7 @@ export class IngresoComponent implements OnInit {
     private _router : Router
   ) {
     this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
-    this.pelicula = new Pelicula("","","","","","","","","",0,"","","","",true);
+    this.pelicula = new Pelicula("",0,"","","","","","","","",0,"","","","",true);
    }
 
   ngOnInit(): void {
