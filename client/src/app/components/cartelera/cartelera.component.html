@@ -42,6 +42,7 @@
                             <p class="t-space-p">{{peliculas.titulo}}</p>
                             <div class="location">{{peliculas.director}}</div>
                             <div class="price">{{peliculas.tiempo}}</div>
+                            {{peliculas.numPelicula }}
                             <p>{{peliculas.sinopsis}}</p>
 
 
@@ -55,11 +56,12 @@
                         </div>
 
                         <span>
-                            <img class="img-trailer"src="./assets/img/trailer.png" />
+                            <img (click)="mostrar(peliculas)" class="img-trailer"src="./assets/img/trailer.png" />
+                            <video  id="{{ video + peliculas.numPelicula}}" src="{{ this.url + 'caratula/' + peliculas.linkTrailer}}" controls ></video>
                         </span>
 
 
-                        <label class="imglabel" for="{{card + peliculas.numPelicula}}" class="button2 return" aria-hidden="true">
+                        <label (click)="comprar(peliculas)" class="imglabel" for="{{card + peliculas.numPelicula}}" class="button2 return" aria-hidden="true">
                             Comprar
                         </label>
                     </div>
