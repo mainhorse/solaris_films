@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 //Inicio Service
 import { CargarScriptService } from './services/cargarScript.service';
+import { MessageService } from './services/message.service';
 
 import { AppComponent } from './app.component';
 import { NavInicioComponent } from './components/nav-inicio/nav-inicio.component';
@@ -66,7 +67,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [UsuarioService,PeliculasService,CargarScriptService],
+  providers: [UsuarioService,PeliculasService,CargarScriptService, MessageService],
 
   bootstrap: [AppComponent]
 })

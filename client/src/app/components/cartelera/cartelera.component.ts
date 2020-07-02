@@ -7,26 +7,28 @@ import { PeliculasService } from '../../services/peliculas.service';
   styleUrls: ['./cartelera.component.css']
 })
 export class CarteleraComponent implements OnInit {
-  public peliculas;
-  public url : String;
-  constructor( private peliculasService : PeliculasService) {
-    this.url = peliculasService.url;
-   }
+  public card : String = 'card';
+  public peliculas ;
+  public url: String;
 
-  ngOnInit(): void {
-    this.visualizacion()
+  constructor(private peliculaService : PeliculasService) { 
+    this.url = peliculaService.url;
   }
 
-  visualizacion(){
-    this.peliculasService.buscarTodasPeliculas().subscribe((response : any)=>{
+  ngOnInit(): void {
+    this.todasPeliculas()
+  }
+
+  todasPeliculas(){
+    this.peliculaService.buscarTodasPeliculas().subscribe((response : any)=>{
       let respuesta = response.peliculas;
       let mensaje = response.message;
-      if(!respuesta){
-        alert(mensaje)
-      }else{
-        localStorage.setItem('peliculas',JSON.stringify(respuesta));
-        this.peliculas = JSON.parse(localStorage.getItem('peliculas'));
+      if(respuesta){
+        localStorage.setItem('peliculas', JSON.stringify(respuesta));
+        this.peliculas = JSON.parse(localStorage.getItem('peliculas'))
       }
     })
   }
+
+
 }

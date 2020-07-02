@@ -16,7 +16,7 @@ export class PeliculaAdmComponent implements OnInit {
     private peliculaService : PeliculasService,
   ) { 
     this.url =  peliculaService.url;  
-    this.pelicula = new Pelicula("","","","","","","","","",0,"","","","",true);
+    this.pelicula = new Pelicula("",0,"","","","","","","","",0,"","","","",true);
   }
 
 ngOnInit(): void {
@@ -105,7 +105,7 @@ buscarPeliculas(){
       let mensaje = response.message;
       if(respuesta && respuesta.length != 0){ 
         localStorage.setItem('pelicula',JSON.stringify(respuesta));
-        this.pelicula = {_id : respuesta.id , titulo : respuesta.titulo , director : respuesta.director,
+        this.pelicula = {_id : respuesta.id , numPelicula : respuesta.numPelicula , titulo : respuesta.titulo , director : respuesta.director,
         linkTrailer : respuesta.linkTrailer, linkPelicula : respuesta.linkPelicula , cartelera : respuesta.cartelera,
         sinopsis : respuesta.sinopsis, clasificacion : respuesta.clasificacion , fechaEstreno : respuesta.fechaEstreno,
         puntuacion : respuesta.puntuacion, tiempo:respuesta.tiempo, calidad : respuesta.calidad, tipo : respuesta.tipo,

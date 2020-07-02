@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 var PeliculaSchema = new Schema({
     titulo : String,
+    numPelicula : Number,
     director : String,
     linkTrailer : String,
     linkPelicula : String,

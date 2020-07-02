@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../../services/message.service';
+
 
 @Component({
   selector: 'app-formulariocontacto',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulariocontactoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _MessageService : MessageService) { }
 
   ngOnInit(): void {
+  }
+
+  contactForm(form){
+    this._MessageService.sendMessage(form).subscribe(()=>{
+      alert("se envio el correo");
+    })
   }
 
 }
