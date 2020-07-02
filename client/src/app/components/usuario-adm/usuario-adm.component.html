@@ -1,30 +1,4 @@
 <div id="container">
-    <div aside id="izq">
-        <form #formularioUsuario="ngForm">
-            <input class="datos" type="text" placeholder="Nombre" name="nombre"
-            #nombre="ngModel" [(ngModel)] = "usuario.nombre">
-            <input class="datos" type="apellido" placeholder="Apellido" name="apellido"
-            #apellido="ngModel" [(ngModel)]="usuario.apellido">
-            <input class="datos" type="text" placeholder="Correo" name="correo"
-            #correo="ngModel" [(ngModel)]="usuario.correo">
-            <input class="datos" type="text" placeholder="Contraseña" name="contrasena"
-            #contrasena="ngModel" [(ngModel)]="usuario.contrasena">
-            <input class="datos" type="text" placeholder="Suscripción" name="rol"
-            #rol="ngModel" [(ngModel)]="usuario.rol">
-            <input class="datos" type="text" placeholder="Compras" name="compras"
-            #compras="ngModel" [(ngModel)]="usuario.compras">
-            <input class="datos" type="text" placeholder="Dirección" name="direccion"
-            #direccion="ngModel" [(ngModel)]="usuario.direccion">
-            <input class="datos" type="text" placeholder="Celular" name="celular"
-            #celular="ngModel" [(ngModel)]="usuario.celular">
-            <input class="datos" type="text" placeholder="Suscripción" name="suscripcion"
-            #suscripcion="ngModel" [(ngModel)]="usuario.suscripcion">
-            <input class="datos" type="text" placeholder="Estado" name="estado"
-            #estado="ngModel" [(ngModel)]="usuario.estado">
-            <button id="actualizar" (click)="actualizar()">Actualizar</button>
-        </form>
-
-    </div>
     <div aside id="der">
         <form #buscadorUsusario="ngForm">
             <input class="datos" type="text" placeholder="Correo" name="correo"
@@ -47,6 +21,14 @@
             {{usuario.celular}}
         </div>
         
+        <form #formularioUsuario="ngForm">
+           
+            <input class="datos" type="text" placeholder="Suscripción" name="suscripcion"
+            #suscripcion="ngModel" [(ngModel)]="usuario.suscripcion">
+            <input class="datos" type="text" placeholder="Estado" name="estado"
+            #estado="ngModel" [(ngModel)]="usuario.estado">
+            <button id="actualizar" (click)="actualizar()">Actualizar</button>
+        </form>
 
 
     </div>

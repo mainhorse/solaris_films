@@ -36,16 +36,6 @@ export class NavInicioComponent implements OnInit {
     localStorage.setItem("pagina","home");
     window.location.reload();
   }
-  
-  comida(){
-    localStorage.setItem("pagina","comida");
-    window.location.reload();
-  }
-
-  contacto(){
-    localStorage.setItem("pagina","nosotros");
-    window.location.reload()
-  }
 
   registrarUsuario(){
     this.usuarioServicio.Registro(this.usuarioRegistro).subscribe(
