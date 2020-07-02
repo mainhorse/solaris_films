@@ -20,4 +20,10 @@ export class FormulariocontactoComponent implements OnInit {
     })
   }
 
+  volver(){
+    localStorage.setItem("pagina", "usuario");
+    window.location.reload();
+   
+  }
+
 }

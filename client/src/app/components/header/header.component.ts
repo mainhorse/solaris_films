@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   public archivoSubir: File;
   public url: String;
   public pelicula: Pelicula;
-
+  
   constructor(private usuarioService: UsuarioService,
     private _CargaScripts: CargarScriptService,
     private peliculaService: PeliculasService) {
@@ -99,10 +99,11 @@ export class HeaderComponent implements OnInit {
   }
 
   home() {
-    localStorage.setItem("pagina", "home");
+    localStorage.setItem("pagina", "usuario");
     window.location.reload();
   }
 
+  
   comida() {
     localStorage.setItem("pagina", "comida");
     window.location.reload();

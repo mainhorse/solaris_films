@@ -8,11 +8,14 @@
     padding: 50px;
     display: inline block;
     font-family: space;
-    background-image: linear-gradient(to bottom, #30cfd0 0%, #161d27 100%);
+    background-image: url("../../../assets/fondoadministrador2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #11366D;
     }
+
     form{
-    margin-left: 150px;
+    margin-left: 50px;
     width: 374px;
     height:  449px;
     background: #11366D;
@@ -22,6 +25,7 @@
     border-radius: 7px;
     justify-content: center;
     }
+    
     form h1{
       color: snow;
       font-family: space;
@@ -35,7 +39,7 @@
     font-size: 17px;
     border: none;
     border-radius: 5px;
-    font-family: space;
+    font-family: Arial, Helvetica, sans-serif;
     }
     
     textarea{
@@ -53,22 +57,45 @@
     background-color:#62C2E4;
     color: white;
     }
+    
     h2{
     text-align: center;
     color: white;
     font-family: space;
     }
+
     .contenidof{
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         font-family: space;
-    
+        margin-left: 50px;
     }
+
     iframe{
-    
     margin-top: 20px;
-    width: 150px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
+    }
+
+    #titulo{
+      font-size: 50px ;
+      color: snow;
     }
  
+    h1{
+      text-align: center;
+    }
+
+    button{
+      width: 30%;
+      height: 15%;
+      margin-left: 30%;
+      padding: 1%;
+      text-align: center;
+      border: none;
+      outline: none;
+      color: rgba(40, 48, 155);
+      background-color: snow;
+      font-size: 18px;
+      border-radius: 20px;
+  }

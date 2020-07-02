@@ -11,7 +11,6 @@
     <app-header ></app-header> 
     <app-slider></app-slider>
     <app-sala></app-sala>
-
     <app-footer></app-footer>
 </div>
 
@@ -23,7 +22,7 @@
 </div>
 
 <div *ngIf='pagina == "comida"' id="comida">
-    <app-nav-inicio></app-nav-inicio> 
+    <app-header></app-header>
     <app-slider-food></app-slider-food>
     <app-comida></app-comida>
     <app-footer></app-footer>
@@ -39,6 +38,10 @@
 <div *ngIf='pagina == "nosotros"' id="home"> 
     <app-formulariocontacto></app-formulariocontacto>
     <app-chat></app-chat>
+</div> 
+
+<div *ngIf='pagina == "empresa"' id="home"> 
+    <app-empresa></app-empresa>
 </div> 
 
 

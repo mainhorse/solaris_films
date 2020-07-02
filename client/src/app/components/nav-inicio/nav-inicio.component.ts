@@ -123,4 +123,9 @@ export class NavInicioComponent implements OnInit {
     )
 }
 
+contacto() {
+    localStorage.setItem("pagina", "nosotros");
+    window.location.reload()
+  }
+  
 }

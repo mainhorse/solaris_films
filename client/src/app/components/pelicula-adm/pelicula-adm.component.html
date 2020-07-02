@@ -1,8 +1,9 @@
 <div id="container">
     <aside id="izq">
         <form #formularioPeliculas="ngForm">
-            <input class="datos" type="text" placeholder="posicion pelicula" name="numPelicula" 
+            <input class="datos" type="text" placeholder="Posición película" name="numPelicula" 
             #numPelicula="ngModel" [(ngModel)] = "pelicula.numPelicula">
+
             <input class="datos" type="text" placeholder="Nombre Pelicula" name="titulo" #titulo="ngModel"
                 [(ngModel)]="pelicula.titulo">
             <input class="datos" type="text" placeholder="Director" name="Director" #director="ngModel"
