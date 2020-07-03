@@ -1,7 +1,7 @@
 <div *ngIf='pagina == undefined'> 
     <app-nav-inicio ></app-nav-inicio>  
     <app-slider></app-slider>
-    <app-cartelera></app-cartelera> 
+    <app-cartelera></app-cartelera>
     <app-footer></app-footer>
 
 </div> 
@@ -11,19 +11,18 @@
     <app-header ></app-header> 
     <app-slider></app-slider>
     <app-sala></app-sala>
-
     <app-footer></app-footer>
 </div>
 
 <div *ngIf='pagina == "administrador"' id="administrador">
   <app-nav-admin ></app-nav-admin>
+  <app-pelicula-adm></app-pelicula-adm>
     <router-outlet></router-outlet>
-    <app-pelicula-adm></app-pelicula-adm>   
     <app-footer></app-footer>
 </div>
 
 <div *ngIf='pagina == "comida"' id="comida">
-    <app-nav-inicio></app-nav-inicio> 
+    <app-header></app-header>
     <app-slider-food></app-slider-food>
     <app-comida></app-comida>
     <app-footer></app-footer>
@@ -39,6 +38,16 @@
 <div *ngIf='pagina == "nosotros"' id="home"> 
     <app-formulariocontacto></app-formulariocontacto>
     <app-chat></app-chat>
+</div> 
+
+<div *ngIf='pagina == "empresa"' id="home"> 
+    <app-empresa></app-empresa>
+</div> 
+
+<div *ngIf='pagina == "carrito"' id="home"> 
+    <app-header></app-header>  
+    <app-carrito></app-carrito>
+    <app-footer></app-footer>
 </div> 
 
 

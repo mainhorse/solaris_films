@@ -2,16 +2,16 @@
     <h1 class="t-space-h1">CARTELERA</h1>
     <div class="wrapper">
         
-    <div *ngFor="let peliculas of peliculas">   
+    <div *ngFor="let peliculas of peliculas">  
         <div class="card">
-            <input type="checkbox" id="card1" class="more" aria-hidden="true">
+            <input type="checkbox" id= "{{card + peliculas.numPelicula}}" class="more" aria-hidden="true">
             <div class="content">
                 <div class="front">
                     <div class="inner">
-                        <label for="card1" class="button" aria-hidden="true">
+                        <label for= "{{card + peliculas.numPelicula}}" class="button" aria-hidden="true">
                             Detalles
                         </label>
-                        <img src="{{this.url + 'caratula/' + peliculas.cartelera}}" />
+                        <img src="{{ this.url + 'caratula/' + peliculas.cartelera}}" />
                     </div>
                 </div>
                 <div class="back">
@@ -20,7 +20,7 @@
                             <span>{{peliculas.puntuacion}}</span>
                             <div class="icon">
                                 <img src="./assets/img/clas.png" />
-                                <span>Puntuacion</span>
+                                <span>Puntuación</span>
                             </div>
                         </div>
                         <div class="info">
@@ -40,31 +40,37 @@
 
                         <div class="description">
                             <p class="t-space-p">{{peliculas.titulo}}</p>
-                            <div class="location">Paramount Pictures (América del Norte)</div>
+                            <div class="location">{{peliculas.director}}</div>
                             <div class="price">{{peliculas.tiempo}}</div>
+                            {{peliculas.numPelicula }}
                             <p>{{peliculas.sinopsis}}</p>
+
+
                         </div>
                         <div class="info">
 
-                            <label for="card1" class="button return" aria-hidden="true">
+                            <label for="{{card + peliculas.numPelicula}}" class="button return" aria-hidden="true">
                                 <img class="comeback" src="./assets/img/volver.png" />
                             </label>
 
                         </div>
 
                         <span>
-                            <img class="img-trailer"src="./assets/img/trailer.png" />
+                            <img (click)="mostrar(peliculas)" class="img-trailer"src="./assets/img/trailer.png" />
+                            <video  id="{{ video + peliculas.numPelicula}}" src="{{ this.url + 'caratula/' + peliculas.linkTrailer}}" controls ></video>
                         </span>
 
 
-                        <label class="imglabel" for="card1" class="button2 return" aria-hidden="true">
+                        <label (click)="comprar(peliculas)" class="imglabel" for="{{card + peliculas.numPelicula}}" class="button2 return" aria-hidden="true">
                             Comprar
                         </label>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+        </div>
+
+
        
     </div>
 </div>

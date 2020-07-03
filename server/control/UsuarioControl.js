@@ -1,7 +1,7 @@
 const Usuario = require('../modelo/usuario');
 const fs = require('fs');
 const path = require('path');
-
+const configMensaje = require('../configMensaje')
 function NuevoUsuario(req,res){
     var usuario = new Usuario();
     var parametros = req.body;
@@ -160,7 +160,8 @@ function buscarUsuario(req,res){
 }
 
 function formulario(req,res){
-
+    configMensaje(req.body);
+    res.status(200).send();
 }
 
 

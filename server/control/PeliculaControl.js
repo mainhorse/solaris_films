@@ -7,7 +7,8 @@ function peliculaNueva(req,res){
   var parametros = req.body;
   var pelicula = new Pelicula();
   var titPelicula = parametros.titulo;
-
+  
+  pelicula.numPelicula = parametros.numPelicula;
   pelicula.titulo = titPelicula.toLowerCase();
   pelicula.director = parametros.director;
   pelicula.linkTrailer = parametros.linkTrailer;
@@ -106,7 +107,7 @@ function subirArchivo(req,res){
                 })
             }
         } else if(campo == 'pelicula'){
-            if(extencionArchivo == 'mp4' || extencionArchivo == 'mov' || extencionArchivo == 'avi'){
+            if(extencionArchivo == 'mp4' || extencionArchivo == 'mov' || extencionArchivo == 'avi' || extencionArchivo == 'mkv'){
             Pelicula.findByIdAndUpdate(idPelicula, {linkPelicula : nombreArchivo},(err, pelicula)=>{
                 if(err){
                     res.status(500).send({message : 'Error en el servidor'});

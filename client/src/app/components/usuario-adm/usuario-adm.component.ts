@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelo/usuario';
 import {UsuarioService } from '../../services/usuario.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-usuario-adm',
   templateUrl: './usuario-adm.component.html',
@@ -27,7 +27,16 @@ export class UsuarioAdmComponent implements OnInit {
         let mensaje = response.message;
         console.log(usuarioE)
         if(usuarioE){  
-          alert(mensaje)       
+          Swal.fire({
+            title: `Excelente `,
+            text: `Se ha encontrado el usuario`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;     
           localStorage.setItem('usuarioEncontrado', JSON.stringify(response.usuario));
           this.usuario = {_id : usuarioE.id, imagen : usuarioE.imagen, nombre: usuarioE.nombre,
           apellido: usuarioE.apellido, correo: usuarioE.correo, contrasena : usuarioE.contrasena,
@@ -35,7 +44,16 @@ export class UsuarioAdmComponent implements OnInit {
            celular: usuarioE.celular,suscripcion : usuarioE.suscripcion, estado : usuarioE.estado }
             
         }else{
-          alert("No se han encontrado concidencias");           
+          Swal.fire({
+            title: `Error`,
+            text: `No se ha encontrado el usuario`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;           
         }
       })
   }
@@ -47,9 +65,27 @@ export class UsuarioAdmComponent implements OnInit {
         let respuesta = response.usario;
         let mensaje = response.message;
         if(respuesta){
-          alert(mensaje)
+          Swal.fire({
+            title: `Genial!`,
+            text: `Se han actualizado los datos`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;
         }else{
-          alert(mensaje)
+          Swal.fire({
+            title: `Error! D:`,
+            text: `No se han actualizado los datos`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;
         }
       })
   }

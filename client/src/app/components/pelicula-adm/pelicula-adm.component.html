@@ -1,6 +1,9 @@
 <div id="container">
     <aside id="izq">
         <form #formularioPeliculas="ngForm">
+            <input class="datos" type="text" placeholder="Posición película" name="numPelicula" 
+            #numPelicula="ngModel" [(ngModel)] = "pelicula.numPelicula">
+
             <input class="datos" type="text" placeholder="Nombre Pelicula" name="titulo" #titulo="ngModel"
                 [(ngModel)]="pelicula.titulo">
             <input class="datos" type="text" placeholder="Director" name="Director" #director="ngModel"
@@ -44,14 +47,14 @@
         </div>
         <div id="sinopsis">
             <div class="card">
-                <input type="checkbox" id="card1" class="more" aria-hidden="true">
+                <input type="checkbox" id="card50" class="more" aria-hidden="true">
                 <div class="content">
                     <div class="front"
                         style="background-image: url('rutaImg'); background-size: 100% 100% ; width: 100%"
                         id="fondoCartelera">
                         <img src="{{ this.url + 'caratula/' + this.pelicula.cartelera}}" id="cartelera">
                         <div class="inner">
-                            <label for="card1" class="button" aria-hidden="true">
+                            <label for="card50" class="button" aria-hidden="true">
                                 Detalles
                             </label>
                         </div>
@@ -92,10 +95,10 @@
                                 <div class="price">{{ pelicula.tiempo}} </div>
                                 <p>{{pelicula.sinopsis }}</p>
                             </div>
-                            <label for="card1" class="button return" aria-hidden="true">
+                            <label for="card50" class="button return" aria-hidden="true">
                                 Volver
                             </label>
-                            <label class="imglabel" for="card1" class="button2 return" aria-hidden="true">
+                            <label class="imglabel" for="card50" class="button2 return" aria-hidden="true">
                                 Comprar
                             </label>
                         </div>

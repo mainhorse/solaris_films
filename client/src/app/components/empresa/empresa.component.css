@@ -3,6 +3,11 @@
 font-family: "orbi";
 src: url("/assets/orbitron.ttf");
 }
+
+.colordiv{
+background-color:  white ;
+}
+
 .titulo{
 font-family: orbi;
 }
@@ -81,7 +86,7 @@ border-radius: 2px;
 -webkit-border-radius: 2px;
 
 /* == */
-width: 250px;
+width: 200px;
 /* == */
 }
 .mcd-menu li {
@@ -634,6 +639,7 @@ font-size:14px;
 
 .main{
 margin-left: 225px;
+background-color: white;
 }
 
 .card {
@@ -1257,7 +1263,7 @@ z-index: 9999;
 }
 .cta-container {
 display: none;
-
+cursor: pointer;
 position: relative;
 text-align: center;
 width: 100%;

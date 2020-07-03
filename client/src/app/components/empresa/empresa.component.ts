@@ -14,5 +14,8 @@ export class EmpresaComponent implements OnInit {
  
   ngOnInit(): void {
   }
-
+  cerrar(){
+    localStorage.clear();
+    window.location.reload();
+  }
 }

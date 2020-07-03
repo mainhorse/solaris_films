@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelo/usuario';
 import { Pelicula } from '../../modelo/pelicula';
 import { UsuarioService } from '../../services/usuario.service';
+import { MessageService } from '../../services/message.service';
+import { Formulario } from '../../modelo/formulario'
+import Swal from 'sweetalert2';
 import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router';
 
 @Component({
@@ -18,14 +21,16 @@ export class NavInicioComponent implements OnInit {
   public tipoUsuario = String;
   public inicio = 0;
   public final = 0;
+  public form : Formulario;
 
   constructor(
     private usuarioServicio : UsuarioService,
-    private _router : Router
+    private _router : Router,
+    public _MessageService : MessageService
   ) {
     this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
     this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
-    this.pelicula = new Pelicula("","","","","","","","","",0,"","","","",true);
+    this.pelicula = new Pelicula("",0,"","","","","","","","",0,"","","","",true);
    }
 
   ngOnInit(): void {
@@ -36,16 +41,6 @@ export class NavInicioComponent implements OnInit {
     localStorage.setItem("pagina","home");
     window.location.reload();
   }
-  
-  comida(){
-    localStorage.setItem("pagina","comida");
-    window.location.reload();
-  }
-
-  contacto(){
-    localStorage.setItem("pagina","nosotros");
-    window.location.reload()
-  }
 
   registrarUsuario(){
     this.usuarioServicio.Registro(this.usuarioRegistro).subscribe(
@@ -53,11 +48,19 @@ export class NavInicioComponent implements OnInit {
             let usuario = response.usuario;
             let mensaje = response.message;
             this.usuarioRegistro = usuario;
+            this.form = { nombre : "solaris@gmail.com", asunto : "Registro exitoso", 
+            correoRecibe : this.usuarioRegistro.correo, correoEnvia : "HiWorldSolutions@gmail.com",
+            mensaje : "te damos la bienvenida a solaris films, durante esta semana puedes disfrutar de nuestros servicios como usuario premium" }
+         
             if(!this.usuarioRegistro){
                alert(mensaje);
                 this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
             }else {
+              
                alert(mensaje);
+               this._MessageService.sendMessage(this.form).subscribe(()=>{
+                alert("se envio el correo");
+              })
                 this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
                 this._router.navigate(['/']);
             }
@@ -110,18 +113,25 @@ export class NavInicioComponent implements OnInit {
                     
                     let correo = this.usuarioIngreso.correo;
                     let correoUsu = correo.substr(this.inicio,8);
-                    if(correoUsu == "@solaris"){
-                        alert("Bienvenido administrador")
+                    if(correoUsu == "@solaris"){                       
                         localStorage.setItem('pagina','administrador'); 
                         localStorage.setItem('usuarioEncontrado',JSON.stringify(this.usuarioIngreso));                       
                     } else {
-                        alert("usuario")
                         localStorage.setItem('pagina','usuario'); 
                     }  
                     window.location.reload();    
                     
         } else {
-            alert('Tu cuenta se encuentra bloqueada, por favor contáctanos para más información');
+          Swal.fire({
+            title: 'Pareces que estas bloqueado!',
+            text: `Por favor comunicate con nosotros`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;
         }
     },
     error =>{
@@ -133,4 +143,9 @@ export class NavInicioComponent implements OnInit {
     )
 }
 
+contacto() {
+    localStorage.setItem("pagina", "nosotros");
+    window.location.reload()
+  }
+  
 }

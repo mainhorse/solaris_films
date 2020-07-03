@@ -199,11 +199,11 @@
   
   
   .logo3{
-      width: 110px;
-      height: 110px;
-      margin-top: -15%;
-      position: absolute;
-      margin-left: 180px;
+    width: 190px;
+    height: 19px;
+    margin-top: -17%;
+    position: absolute;
+    margin-left: 200px;
   }
   
   
@@ -238,7 +238,7 @@
     
       width: 280px;
       height: 320px; 
-      margin: 0% 35%;
+      margin: 9% 40%;
       position:absolute;
       z-index: 1;
   }
@@ -246,7 +246,7 @@
   
   h1{
       position: relative;
-      top: 10px;
+      top: 100px;
       color: snow;
       font-size: 50px;
       font-family: "Space";

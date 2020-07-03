@@ -69,7 +69,7 @@
   }
 
 video{
-    margin: 0 auto;
+    margin: -50px auto;
     display: block;
     width: 90%;
     height: 90%;
@@ -80,6 +80,8 @@ video{
     padding: 2%;
     flex-wrap: wrap;
     background-color: #606060;
+    margin-top: -15px;
+
 }
 
 button{

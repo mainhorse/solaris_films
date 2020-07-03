@@ -1,10 +1,6 @@
 <header class="he1">
-
-    <div class="container red topBotomBordersOut">
+    <div class="container red">
         <a (click)="home()">HOME</a>
-        <a (click)="comida()">CONFITERIA</a>
-        <a (click)="contacto()">CONTACTENOS</a>
-
         <input type="radio" name="modalUno" id="abrirModalUno">
         <label for="abrirModalUno" class="btn1">Iniciar Sesión</label>
         <input type="radio" name="modalUno" id="cerrarModalUno">
@@ -20,7 +16,7 @@
                         [(ngModel)]="usuarioIngreso.contrasena">
                     <br>
                     <button type="submit">Ingreso</button>
-                    <a id="reCuenta">¿Olvidaste tu cuenta?</a>
+                    <a (click)="contacto()" id="reCuenta">¿Olvidaste tu cuenta?</a>
                 </form>
 
             </div>
