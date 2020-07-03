@@ -1,33 +1,32 @@
 <div id="container">
     <div aside id="izq">
         <form #formularioUsuario="ngForm">
-             <input class="datos" type="text" placeholder="Suscripción" name="rol"
-            #rol="ngModel" [(ngModel)]="usuario.rol">
-            <input class="datos" type="text" placeholder="Compras" name="compras"
-            #compras="ngModel" [(ngModel)]="usuario.compras"> 
-            <input class="datos" type="text" placeholder="subscripción" name="suscripcion"
-            #suscripcion="ngModel" [(ngModel)]="usuario.suscripcion">
-            <input class="datos" type="text" placeholder="Estado" name="estado"
-            #estado="ngModel" [(ngModel)]="usuario.estado">
+            <input class="datos" type="text" placeholder="Compras" name="compras" #compras="ngModel"
+                [(ngModel)]="usuario.compras">
+            <input class="datos" type="text" placeholder="subscripción" name="suscripcion" #suscripcion="ngModel"
+                [(ngModel)]="usuario.suscripcion">
+            <input class="datos" type="text" placeholder="Estado" name="estado" #estado="ngModel"
+                [(ngModel)]="usuario.estado">
             <button id="actualizar" (click)="actualizar()">Actualizar</button>
         </form>
 
     </div>
     <div aside id="der">
         <form #buscadorUsusario="ngForm">
-            <input class="datos" type="text" placeholder="Correo" name="correo"
-            #correo="ngModel" [(ngModel)]="usuario.correo">
+            <input class="datos" type="text" placeholder="Correo" name="correo" #correo="ngModel"
+                [(ngModel)]="usuario.correo">
             <button id="buscar" type="submit" (click)="buscarUsuario()">Buscar Usuario</button>
-        </form> 
-<div class="card">
-    <img src="{{ this.url + 'mostrarFoto/' + usuario.imagen}}" alt="foto Usuario" width="100%" height="100%">
-  <h1>{{ usuario.nombre }}{{usuario.apellido}}</h1>
-  <p class="title"></p>
-  <p> {{usuario.direccion}}</p>
-  <p> {{usuario.celular}}</p>
-  <p>{{usuario.correo}}</p>
- 
-  <p><button> Usuario {{usuario.rol}}</button></p>
-</div>
+        </form>
+        <div class="card">
+            <img src="{{ this.url + 'mostrarFoto/' + usuario.imagen}}" alt="foto Usuario" width="100%" height="100%">
+            <h1>{{ usuario.nombre }}</h1>
+            <h1>{{usuario.apellido}}</h1>
+            <p class="title"></p>
+            <p> {{usuario.direccion}}</p>
+            <p> {{usuario.celular}}</p>
+            <p>{{usuario.correo}}</p>
+
+            <p><button> Usuario {{usuario.rol}}</button></p>
+        </div>
     </div>
 </div>

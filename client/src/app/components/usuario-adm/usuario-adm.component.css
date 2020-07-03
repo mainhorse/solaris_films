@@ -1,13 +1,12 @@
 #container{
 
     background-image: url(/assets/fondo_peliculas_admin2.jpg);
-    width: 90%;
-    height: 70%;
-    margin-top: 6%;
-    margin-left: 5%;
-    float: left;
-    background-size: 100% 100%;
-
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    background-size: cover;
+    
 }
 
 #izq{
@@ -16,17 +15,17 @@
     overflow: auto;
     font-family: sans-serif;
     border-radius: 5px;
-    width: 90%;
+    width: 40%;
     height: 90%;
     margin-left: 5%;
-    margin-top: -8%;
+    margin-top: 4%;
     margin-bottom: 130px;
 
 }
 
 
 input{
-    width: 90%;
+    width: 50%;
     height: 18%;
     margin-top: 1%;
     margin-left: 3%;
@@ -37,11 +36,11 @@ input{
 
 #der{
     background-color: rgba(40, 48, 155, 0.671);
-    width: 45%;
-    height: 95%;
-    margin-top: 1%;
-    margin-left: 32%;
-    float: left;
+    width: 40%;
+    height: 90%;
+    margin-top: 4%;
+    margin-right: 5%;
+    float: right;
     overflow: auto;
     border-radius: 5px;
 }

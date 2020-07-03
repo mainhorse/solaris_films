@@ -265,12 +265,12 @@ h1{
   
   div.container
   {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "Space";
       padding: 40px 1px;
       text-align: center;
-      margin-top: -11%;
-      margin-left: 10px;
-      margin-right: -10%;
+      margin-top: -10%;
+      margin-left: 11px;
+      margin-right: 12px;
   }
   
   

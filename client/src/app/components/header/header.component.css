@@ -30,7 +30,7 @@ h1{
   display:table;
 }
 .leftMenu{
-	height: 195%;
+	height: 212%;
 	background-color:  #161d27 ;
 	position: absolute;
 	left	: 0;
@@ -283,9 +283,7 @@ html, body
     text-align: center;
     margin-top: 4.4% ;
 	margin-left: 0.9;
-	
-    
-    
+	z-index: 500;
 }
 
 header span
@@ -298,13 +296,15 @@ footer span
   color: #AAA;
 }
 
-div.container{
-    font-family: 'Times New Roman', Times, serif;
+div.container
+{
+	font-family: "Space";
 	padding: 40px 1px;
-    text-align: center;
-    margin-top: -11%;
-    margin-left: 10px;
-    margin-right: -10%;
+	text-align: center;
+	margin-top: -10%;
+	margin-left: 20px;
+	margin-right: 12px;
+	width: 100%;
 }
 
 
@@ -391,4 +391,3 @@ input[type="file"]#files {
 	padding: 1%;
 	text-align: center;
 	}
-

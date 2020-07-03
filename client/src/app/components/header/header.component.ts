@@ -178,6 +178,11 @@ export class HeaderComponent implements OnInit {
     window.location.reload()
   }
 
+  reserva() {
+    localStorage.setItem("pagina", "reserva");
+    window.location.reload()
+  }
+
   actualizarPelicula(){
     let peliculaId = JSON.parse(localStorage.getItem('pelicula'));
     this.pelicula._id = peliculaId._id;
