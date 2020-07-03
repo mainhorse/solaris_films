@@ -1,20 +1,21 @@
-<header class="he1">           
-  <div class="container red topBotomBordersOut">
+<header class="he1">
+  <img class="logo3" src="assets/img/logo.png" alt="">
+  <div class="container red">
     <a (click)="home()" class="uno">PERFIL</a>
-  <!--   <a class="uno">PROGRAMACION</a> -->
+    <!--   <a class="uno">PROGRAMACION</a> -->
     <a (click)="comida()" class="uno">CONFITERIA</a>
     <a (click)="contacto()" class="uno">CONTACTENOS</a>
     <a (click)="cerrar()" class="uno">Cerrar Sesion</a>
 
-    <form #formularioBusqueda='ngForm' >
-      <input class="uno" type="text" placeholder="Búsqueda" name="busqueda" #busqueda="ngModel"
-          [(ngModel)]="pelicula.busqueda">
-      <button id="botonBuscar" type="submit" (click)="buscarPeliculas()">Buscar</button>
-  </form>
- 
+    <form #formularioBusqueda='ngForm'>
+      <input class="btnBuscar" type="text" placeholder="Búsqueda" name="busqueda" #busqueda="ngModel"
+        [(ngModel)]="pelicula.busqueda">
+      <button class="botonbuscar" type="submit" (click)="buscarPeliculas()"><i class="fas fa-search"></i></button>
+    </form>
+
   </div>
 </header>
-<img class="logo3" src="assets/img/logo.png"  alt="">
+
 <div class="leftMenu">
   <div class="hamburger active">
     <span></span>
@@ -23,42 +24,38 @@
   </div>
   <ul class="leftMenuList">
 
-  <li>
-    <a href="#" class="dropdown">
-      <i class="fa fa-home"></i>
-      <span id="nombre">{{usuario.nombre + ' ' +usuario.apellido }}</span>
-    </a>
-    <header>
+    <li>
+      <a href="#" class="dropdown">
+        <i class="fa fa-home"></i>
+        <span id="nombre">{{usuario.nombre + ' ' +usuario.apellido }}</span>
+      </a>
+      <header>
         <img src="{{ this.url + 'mostrarFoto/' + usuario.imagen }}" alt="imagen de usuario" id="fotoUsu">
-    </header>
-  </li>
-  <li>
-    <a class="dropdown">
-      <i class="fa fa-table"></i>
-      <span>INFORMACIÓN</span>
-      <br>
-      <form #formularioPersonal="ngForm">
-        <input class="datos" type="text"  placeholder="Nombre" name="nombre"
-        #nombre="ngModel" [(ngModel)]= "usuario.nombre">
-        <input class="datos" type="text"  placeholder="Apellido" name="apellido"
-        #apellido="ngModel" [(ngModel)]="usuario.apellido">
-        <input class="datos" type="text"  placeholder="Correo" name="correo"
-        #correo="ngModel" [(ngModel)]="usuario.correo">
-        <input class="datos" type="password"  placeholder="Contraseña" name="contrasena"
-        #contrasena="ngModel" [(ngModel)]="usuario.contrasena">
-        <input class="datos" type="text"  placeholder="Afiliación" name="rol"
-        #rol="ngModel" [(ngModel)]="usuario.rol">
-        <input class="datos" type="text"  placeholder="Dirección" name="direccion"
-        #direccion="ngModel" [(ngModel)]="usuario.direccion">
-        <input class="datos" type="text"  placeholder="Celular" name="celular"
-        #celular="ngModel" [(ngModel)]="usuario.celular">
-        <input type="file" id="files"  (change)="subirArchivo($event)">
-        <button type="submit" id="actualizar" (click)="actualizarDatos()">Actualizar</button>
-      </form>
-    </a>
-  </li>  
+      </header>
+    </li>
+    <li>
+      <a class="dropdown">
+        <i class="fa fa-table"></i>
+        <span>INFORMACIÓN</span>
+        <br>
+        <form #formularioPersonal="ngForm">
+          <input class="datos" type="text" placeholder="Nombre" name="nombre" #nombre="ngModel"
+            [(ngModel)]="usuario.nombre">
+          <input class="datos" type="text" placeholder="Apellido" name="apellido" #apellido="ngModel"
+            [(ngModel)]="usuario.apellido">
+          <input class="datos" type="text" placeholder="Correo" name="correo" #correo="ngModel"
+            [(ngModel)]="usuario.correo">
+          <input class="datos" type="password" placeholder="Contraseña" name="contrasena" #contrasena="ngModel"
+            [(ngModel)]="usuario.contrasena">
+          <input class="datos" type="text" placeholder="Afiliación" name="rol" #rol="ngModel" [(ngModel)]="usuario.rol">
+          <input class="datos" type="text" placeholder="Dirección" name="direccion" #direccion="ngModel"
+            [(ngModel)]="usuario.direccion">
+          <input class="datos" type="text" placeholder="Celular" name="celular" #celular="ngModel"
+            [(ngModel)]="usuario.celular">
+          <input type="file" id="files" (change)="subirArchivo($event)">
+          <button type="submit" id="actualizar" (click)="actualizarDatos()">Actualizar</button>
+        </form>
+      </a>
+    </li>
 
-    <img class="logo4" src="../../../assets/img/logoDos.png"  alt="logo empresa">
-
-
-
+    <img class="logo4" src="../../../assets/img/logoDos.png" alt="logo empresa">
