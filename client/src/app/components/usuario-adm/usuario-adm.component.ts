@@ -66,8 +66,8 @@ export class UsuarioAdmComponent implements OnInit {
         let mensaje = response.message;
         if(respuesta){
           Swal.fire({
-            title: `Genial!`,
-            text: `Se han actualizado los datos`,
+            title: `Error!`,
+            text: `${mensaje}`,
             imageUrl: '../../assets/universoColores.jpg',
             imageWidth: 400,
             imageHeight: 200,
@@ -77,8 +77,8 @@ export class UsuarioAdmComponent implements OnInit {
           }).finally;;
         }else{
           Swal.fire({
-            title: `Error! D:`,
-            text: `No se han actualizado los datos`,
+            title: `Genial!`,
+            text: `${mensaje}`,
             imageUrl: '../../assets/universoColores.jpg',
             imageWidth: 400,
             imageHeight: 200,

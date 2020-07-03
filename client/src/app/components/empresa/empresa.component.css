@@ -705,7 +705,7 @@ background-size: 100% 100%;
 width: 477px;
 height: 216px;
 box-sizing: none;
-background-image: url("/assets/img/hvcami.jpg");
+/* background-image: url("/assets/img/hvcami.jpg"); */
 background-position: center;
 background-size: 100% 100%;
 }
@@ -729,7 +729,7 @@ background-size: 100% 100%;
 width: 477px;
 height: 216px;
 box-sizing: none;
-background-image: url("/assets/img/hvcami.jpg");
+/* background-image: url("/assets/img/hvcami.jpg"); */
 background-position: center;
 background-size: 100% 100%;
 }
