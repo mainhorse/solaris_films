@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { RegistroComponent } from './components/registro/registro.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { ComidaComponent } from './components/comida/comida.component';
-import { CarteleraComponent } from './components/cartelera/cartelera.component';
 import{ SalaComponent } from './components/sala/sala.component';
 import{ UsuarioAdmComponent } from './components/usuario-adm/usuario-adm.component'
 import { ChatComponent } from './components/chat/chat.component';

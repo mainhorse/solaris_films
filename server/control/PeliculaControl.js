@@ -107,7 +107,7 @@ function subirArchivo(req,res){
                 })
             }
         } else if(campo == 'pelicula'){
-            if(extencionArchivo == 'mp4' || extencionArchivo == 'mov' || extencionArchivo == 'avi'){
+            if(extencionArchivo == 'mp4' || extencionArchivo == 'mov' || extencionArchivo == 'avi' || extencionArchivo == 'mkv'){
             Pelicula.findByIdAndUpdate(idPelicula, {linkPelicula : nombreArchivo},(err, pelicula)=>{
                 if(err){
                     res.status(500).send({message : 'Error en el servidor'});

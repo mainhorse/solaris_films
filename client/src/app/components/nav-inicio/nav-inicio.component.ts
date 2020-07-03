@@ -4,6 +4,7 @@ import { Pelicula } from '../../modelo/pelicula';
 import { UsuarioService } from '../../services/usuario.service';
 import { MessageService } from '../../services/message.service';
 import { Formulario } from '../../modelo/formulario'
+import Swal from 'sweetalert2';
 import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router';
 
 @Component({
@@ -112,18 +113,25 @@ export class NavInicioComponent implements OnInit {
                     
                     let correo = this.usuarioIngreso.correo;
                     let correoUsu = correo.substr(this.inicio,8);
-                    if(correoUsu == "@solaris"){
-                        alert("Bienvenido administrador")
+                    if(correoUsu == "@solaris"){                       
                         localStorage.setItem('pagina','administrador'); 
                         localStorage.setItem('usuarioEncontrado',JSON.stringify(this.usuarioIngreso));                       
                     } else {
-                        alert("usuario")
                         localStorage.setItem('pagina','usuario'); 
                     }  
                     window.location.reload();    
                     
         } else {
-            alert('Tu cuenta se encuentra bloqueada, por favor contáctanos para más información');
+          Swal.fire({
+            title: 'Pareces que estas bloqueado!',
+            text: `Por favor comunicate con nosotros`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;
         }
     },
     error =>{

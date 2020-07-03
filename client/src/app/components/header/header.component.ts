@@ -5,7 +5,7 @@ import { Usuario } from '../../modelo/usuario';
 import { Pelicula } from '../../modelo/pelicula';
 import { PeliculasService } from '../../services/peliculas.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -42,23 +42,68 @@ export class HeaderComponent implements OnInit {
         let respuesta = response.usuario;
         let mensaje = response.message;
         if (!respuesta) {
-          alert(mensaje)
+          Swal.fire({
+            title: 'No se pudo actualizar tus datos',
+            text: `Intenta más tarde`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;
         } else {
-          alert(mensaje);
+          Swal.fire({
+            title: 'Datos actualizados!',
+            text: `Revisa tu perfil`,
+            imageUrl: '../../assets/universoColores.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image', 
+            confirmButtonColor: '#F76363',
+            backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+          }).finally;;
           localStorage.setItem('sesion', JSON.stringify(respuesta));
         }
       });
     if (!this.archivoSubir) {
-      alert("No has subido una imagen");
+      Swal.fire({
+        title: 'No Subiste una imagen',
+        text: `Intenta más tarde`,
+        imageUrl: '../../assets/universoColores.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image', 
+        confirmButtonColor: '#F76363',
+        backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+      }).finally;;
     } else {
       this.usuarioService.cargarImagenUsuario(this.archivoSubir, this.usuario._id).subscribe(
         (response: any) => {
           let respuesta = response.usuario;
           let mensaje = response.message;
           if (!respuesta) {
-            alert(mensaje);
+            Swal.fire({
+              title: 'Error, no se pudo cambiar la imagen',
+              text: `Intenta más tarde`,
+              imageUrl: '../../assets/universoColores.jpg',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Custom image', 
+              confirmButtonColor: '#F76363',
+              backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally;;
           } else {
-            alert(mensaje);
+            Swal.fire({
+              title: 'Se ha modificado la imagen',
+              text: `Reinicia tu sesión`,
+              imageUrl: '../../assets/universoColores.jpg',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Custom image', 
+              confirmButtonColor: '#F76363',
+              backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            }).finally;;
             let img = this.url + 'mostrarFoto/' + this.usuario.imagen;
             document.getElementById('fotoUsu').setAttribute('src', img);
           }
@@ -72,8 +117,9 @@ export class HeaderComponent implements OnInit {
       (response: any) => {
         let respuesta = response.pelicula;
         let mensaje = response.message;
+        let pelicula = JSON.parse(localStorage.getItem('pelicula'))
         let usuario = JSON.parse(localStorage.getItem('sesion'));
-        if(usuario.rol == 'depredador'){
+        if(usuario.rol == 'depredador' && pelicula.estado == true){
           if (respuesta && respuesta.length != 0) {
             localStorage.setItem('pelicula', JSON.stringify(respuesta));
             this.pelicula = {
@@ -83,12 +129,30 @@ export class HeaderComponent implements OnInit {
               puntuacion: respuesta.puntuacion, tiempo: respuesta.tiempo, calidad: respuesta.calidad, tipo: respuesta.tipo,
               busqueda: respuesta.busqueda, estado: respuesta.estado
             }
-            alert(mensaje);
-            window.location.reload();
+            Swal.fire({
+              title: 'Película encontrada',
+              text: `Disfruta la película, ¿Qué tal probar un nuevo combo depralien?`,
+              imageUrl: '../../assets/universoColores.jpg',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Custom image', 
+              confirmButtonColor: '#F76363',
+              backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+            })
+            this.intervalo();
           } 
         }
        else {
-          alert("Revisa tu subscripción");
+        Swal.fire({
+          title: 'Revisa tu subscripción',
+          text: `Parece que tu cuenta no puede ver películas`,
+          imageUrl: '../../assets/universoColores.jpg',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image', 
+          confirmButtonColor: '#F76363',
+          backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+        }).finally;;
         }
       })
   }
@@ -133,6 +197,15 @@ export class HeaderComponent implements OnInit {
           console.log(errorMensaje);
         }
       })
+  }
+
+
+  intervalo(){
+    setTimeout(this.recarga,6000);
+  }
+
+  recarga(){
+    window.location.reload()
   }
 }
 
