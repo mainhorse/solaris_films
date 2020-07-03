@@ -30,10 +30,10 @@
   }
   
   .main_content{
-     
+    background-image: linear-gradient(#330867,black);
       width: 100%;
       text-align: center;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       background-size: 100% 100%;
       width: 100%;
       overflow:hidden;
@@ -46,6 +46,7 @@
     width: 100%;
     margin-top: 5px;
     box-sizing: border-box;
+    background-image: url("/assets/img/sparkles2.gif");
 }
 
 .container{
