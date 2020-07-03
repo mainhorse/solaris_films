@@ -16,7 +16,7 @@ font-family: orbi;
 .hi{
 width:383px;
 height: 63px;
-margin-left: 222px;
+margin-left: 36%;
 margin-top:33px;
 }
 
@@ -705,7 +705,7 @@ background-size: 100% 100%;
 width: 477px;
 height: 216px;
 box-sizing: none;
-/* background-image: url("/assets/img/hvcami.jpg"); */
+background-image: url("/assets/img/hvdavid.jpg");
 background-position: center;
 background-size: 100% 100%;
 }
@@ -729,7 +729,7 @@ background-size: 100% 100%;
 width: 477px;
 height: 216px;
 box-sizing: none;
-/* background-image: url("/assets/img/hvcami.jpg"); */
+background-image: url("/assets/img/hvrojas.jpg");
 background-position: center;
 background-size: 100% 100%;
 }
@@ -1094,9 +1094,9 @@ z-index: 0;
 background-size: 100%;
 }
 .five{
-width:129px;
+width:132px;
 height: 123px;
-margin-left: 320px;
+margin-left: 42%;
 }
 
 /*------------------------------------------- Info personal footer -------------------------------*/

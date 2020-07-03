@@ -17,9 +17,9 @@ main{
 }
 
 #constructor{
-  height: 500px;
-  width: 900px;
-  margin: 0 auto;
+  height: 400px;
+  width: 700px;
+  margin: 0 auto 145px;
   display: block;
 }
 
