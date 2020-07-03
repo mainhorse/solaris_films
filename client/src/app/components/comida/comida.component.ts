@@ -11,5 +11,8 @@ export class ComidaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  carrito() {
+    localStorage.setItem("pagina", "carrito");
+    window.location.reload()
+  }
 }

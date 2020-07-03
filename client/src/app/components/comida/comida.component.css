@@ -30,7 +30,7 @@
   }
   
   .main_content{
-      background-image: linear-gradient( 135deg, #039dc7 10%, #7367F0 100%);
+     
       width: 100%;
       text-align: center;
       background-repeat: no-repeat;
@@ -331,13 +331,11 @@ color: #7d7d7d;
 /* product image  */
 .product-image {
 transition: all 0.3s ease-out;
-display: inline-block;
 position: relative;
 overflow: hidden;
 height: 100%;
 float: right;
 width: 100%;
-display: inline-block;
 }
 
 .sub-container img {
