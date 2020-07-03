@@ -1,6 +1,7 @@
 <header class="he1">           
     <div class="container red topBotomBordersOut">
       <a class="uno" routerLink="/">PERFIL</a>
+      <a class="uno" routerLink="/cartelera">CARTELERA</a>
       <a class="uno" routerLink="/sala">PELICULA</a>
       <a class="uno"routerLink="/usuario">USUARIO</a>
     <!--   <a class="uno">CONTACTENOS</a> -->
@@ -39,7 +40,7 @@
           #correo="ngModel" [(ngModel)]="usuario.correo">
           <input class="datos" type="password"  placeholder="Contraseña" name="contrasena"
           #contrasena="ngModel" [(ngModel)]="usuario.contrasena">
-          <input class="datos" type="text"  placeholder="Afiliación" name="rol"
+          <input class="datos" type="text"  placeholder="Administrador" name="rol"
           #rol="ngModel" [(ngModel)]="usuario.rol">
           <input class="datos" type="text"  placeholder="Dirección" name="direccion"
           #direccion="ngModel" [(ngModel)]="usuario.direccion">
