@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from '../../services/peliculas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cartelera',
@@ -47,8 +48,17 @@ export class CarteleraComponent implements OnInit {
   }
 
   comprar(datos){
-    alert(`La pelicula ${datos.titulo}, tiene un valor de $15.000 y una duración de ${datos.tiempo}`
-    )
+    Swal.fire({
+      title: `La película ${datos.titulo} tiene un valor de $15.000 pesos y tiene una duración de ${datos.tiempo}`,
+      text: `Comuniquese al 3123451231 para mayor información`,
+      imageUrl: '../../assets/pases.jpg',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image', 
+      confirmButtonColor: '#F76363',
+      backdrop: ` rgba(0,0,0,0.5) left top no-repeat`
+    }).finally;;  
+    
   }
 
 }
