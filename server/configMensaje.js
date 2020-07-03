@@ -10,10 +10,10 @@ module.exports = (formulario) =>{
     })
 
     const mailOptions = {
-        from : formulario.nombre + " " +  formulario.correo,
-        to: 'HiWorldSolutions@gmail.com',
+        from : formulario.correoEnvia,
+        to: formulario.correoRecibe,
         subject: formulario.asunto,
-        text : formulario.mensaje + " " + formulario.correo
+        text : formulario.mensaje + " " + formulario.correoEnvia
         //html: 
         //<strong>Nombre:</strong><br/>
         //<strong>E-mail: </strong><br/>

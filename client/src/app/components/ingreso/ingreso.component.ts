@@ -17,10 +17,11 @@ export class IngresoComponent implements OnInit {
   public tipoUsuario = String;
   public inicio = 0;
   public final = 0;
+ 
 
   constructor(
     private usuarioServicio : UsuarioService,
-    private _router : Router
+    private _router : Router,
   ) {
     this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
     this.pelicula = new Pelicula("",0,"","","","","","","","",0,"","","","",true);

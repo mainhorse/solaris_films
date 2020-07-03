@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelo/usuario';
 import { Pelicula } from '../../modelo/pelicula';
 import { UsuarioService } from '../../services/usuario.service';
+import { MessageService } from '../../services/message.service';
+import { Formulario } from '../../modelo/formulario'
 import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router';
 
 @Component({
@@ -18,10 +20,12 @@ export class NavInicioComponent implements OnInit {
   public tipoUsuario = String;
   public inicio = 0;
   public final = 0;
+  public form : Formulario;
 
   constructor(
     private usuarioServicio : UsuarioService,
-    private _router : Router
+    private _router : Router,
+    public _MessageService : MessageService
   ) {
     this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
     this.usuarioIngreso = new Usuario('','','','','','','usuario',[],'', 312000000,'',true); 
@@ -43,11 +47,19 @@ export class NavInicioComponent implements OnInit {
             let usuario = response.usuario;
             let mensaje = response.message;
             this.usuarioRegistro = usuario;
+            this.form = { nombre : "solaris@gmail.com", asunto : "Registro exitoso", 
+            correoRecibe : this.usuarioRegistro.correo, correoEnvia : "HiWorldSolutions@gmail.com",
+            mensaje : "te damos la bienvenida a solaris films, durante esta semana puedes disfrutar de nuestros servicios como usuario premium" }
+         
             if(!this.usuarioRegistro){
                alert(mensaje);
                 this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
             }else {
+              
                alert(mensaje);
+               this._MessageService.sendMessage(this.form).subscribe(()=>{
+                alert("se envio el correo");
+              })
                 this.usuarioRegistro = new Usuario('','','','','','','',[],'', 312000000,'',true); 
                 this._router.navigate(['/']);
             }
